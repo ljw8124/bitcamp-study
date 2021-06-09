@@ -3,7 +3,9 @@ console.log("WoW2");
 console.log("WoW3");
 console.log("WoW4");
 console.log("WoW5");
-console.log("WoW6");
+
+console.log("MoM");
+
 console.log("WoW7");
 console.log("WoW8");
 console.log("WoW9");
