@@ -9,7 +9,7 @@ public class Exam0141 {
     
     int i = 5;
     int j = 2;
-    float r = i / j; // int와 int의 연산 결과는 항상 int이다.
+    float r = i / j; // int와 int의 연산 결과는 항상 int이다.-> 2.5이지만 int는 소수점을 출력하지 못하므로 2만 출력된다
     // 따라서 r 변수에 넣기 전에 
     // 이미 결과는 정수 2가 된다.
     // 정수 2를 float 변수에 넣으면 
@@ -19,9 +19,9 @@ public class Exam0141 {
     // 해결책!
     // - 변수에 들어 있는 값을 다른 타입으로 바꿔라.
     //   "형변환(type conversion=type casting)"하라!
-    r = (float)i / (float)j; // float / float = float
+    r = (float)i / (float)j; // float / float = float -> float으로 강제형변환을 했으므로 소수점까지 출력된다
     // i / j의 값은 2.5가 되고
-    // r에 저장되는 것은 2.5이다.
+    // r에 저장되는 것은 2.5이다. 
     System.out.println(r);                         
   }
 }
@@ -30,7 +30,7 @@ public class Exam0141 {
 // - int와 int의 연산 결과는 int이다.
 // - float과 float의 연산 결과는 float이다.
 // - 즉 연산 결과는 피연산자의 타입과 같다.
-// - 그래서 두 값을 계산했을 때 결과 메모리를 초과할 경우
+// - 그래서 두 값을 계산했을 때 결과 메모리를 초과할 경우->오류는 안나기때문에 자칫하면 잘못된 값으로 출력할 수 있으므로 조심해야한다
 //   값이 짤릴 수 있다.
 //   주의하라!
 // - 코드를 작성할 때 피연산자의 계산 결과가 피연산자의 메모리 크기를
@@ -55,7 +55,7 @@ public class Exam0141 {
 // => short + short = int
 // => byte + short = int
 // 
-// 2) 연산 결과는 항상 피연산자의 타입과 같다.
+// 2) 연산 결과는 항상 피연산자의 타입과 같다. 
 // => int + int = int
 // => long + long = long
 // => float + float = float

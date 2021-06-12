@@ -7,7 +7,7 @@ public class Exam0210 {
     int a = 10;
     int b = 20;
     
-    // 비교의 결과는 true 또는 false이다.
+    // 비교의 결과는 true 또는 false이다. (논리연산자)
     // 즉 boolean 값이다.
     boolean r1 = a < b; // true
     

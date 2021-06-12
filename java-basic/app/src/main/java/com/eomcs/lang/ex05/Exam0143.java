@@ -13,7 +13,7 @@ public class Exam0143 {
     float r1 = f1 + f2;
     // f1과 f2에 들어 있는 값이 유효자릿수라 하더라도
     // 연산 결과가 유효자릿수가 아니라면 값을 깨진다.
-    // => float과 float의 연산 결과는 float이기 때문이다.
+    // => float과 float의 연산 결과는 float이기 때문이다. -> float은 소수점 빼고 7자리만 가능 따라서 나머지 뒤 소수점은 사라짐
     
     System.out.println(r1);
     // 기대값: 987.6543 + 1.111111 = 988.765411
@@ -37,7 +37,7 @@ public class Exam0143 {
     //    왜곡된 값이 들어 갈 수 있다.
     // => float을 double 변수에 넣을 때 왜곡이 발생하기 때문에 
     //    가능한 double 변수로 값을 바꾼 다음에 연산을 수행하라.
-    //    더 좋은 것은 처음부터 double 변수를 사용하라!
+    //    더 좋은 것은 처음부터 double 변수를 사용하라! double을 defalut 값으로 사용하는 이유
 
     // 다음과 같이 처음부터 double 변수를 사용하라!
     double d1 = 987.6543;

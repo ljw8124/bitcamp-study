@@ -13,7 +13,7 @@ public class Exam0150 {
       if (age >= 70) 
         System.out.println("지하철 무임승차 가능합니다.");
     else 
-      System.out.println("미성년입니다.");
+      System.out.println("미성년입니다."); // 제일가까운 위에 if에 소속되므로 
 
     System.out.println("------------------------------");
     

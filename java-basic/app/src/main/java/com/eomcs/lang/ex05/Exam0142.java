@@ -34,7 +34,7 @@ public class Exam0142 {
     // 진정한 해결책?
     // - int와 int 연산 결과가 int 크기를 넘어갈 것 같으면 
     //   형변환하여 계산하라!
-    r2 = (long)x + (long)y;
+    r2 = (long)x + (long)y; //long으로 강제형변환한 후 더하게 되므로 long은 제대로 출력된다
     System.out.println(r2);
   }
 }
@@ -61,7 +61,7 @@ public class Exam0142 {
 // 결론!
 // 1) 자바의 최소 연산 단위는 int이다.
 //    따라서 int 보다 작은 크기의 메모리 값을 다룰 때는
-//    내부적으로 int로 자동 형변환을 수행한 다음에 연산을 수행한다.
+//    내부적으로 int로 자동 형변환을 수행한 다음에 연산을 수행한다. int가 defalut 값이기 때문에 int로 출력됨
 //    내부적으로 자동 형변환하는 것을 
 //    "암시적 형변환(implicit type conversion)"이라 부른다.
 // => byte + byte = int

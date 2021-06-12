@@ -10,7 +10,7 @@ public class Exam0340 {
     // 계산 순서:
     // r = a || (b = true)
     // r = true || (b = true)
-    // => || 왼쪽 값으로 이미 결과를 알 수 있기 때문에 
+    // => || 왼쪽 값으로 이미 결과를 알 수 있기 때문에 불필요한 작업x
     //    || 오른쪽 문장은 실행하지 않는다.
     // r = true
     System.out.printf("a=%b, b=%b, r=%b\n", a, b, r);

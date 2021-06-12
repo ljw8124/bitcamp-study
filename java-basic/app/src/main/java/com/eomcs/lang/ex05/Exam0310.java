@@ -22,14 +22,14 @@ public class Exam0310 {
 
     System.out.println("-----------------------");
 
-    // NOT 연산자 
+    // NOT 연산자  !는 not을 의미함
     // - true는 false로 false는 true로 바꾼다.
     System.out.println(!true);
     System.out.println(!false);
 
     System.out.println("-----------------------");
 
-    // exclusive-OR(XOR)연산자 
+    // exclusive-OR(XOR)연산자 ^는 nor 을 의미함
     // - 배타적 비교 연산자라 부른다.
     // - 두 개의 값이 다를 때 true이다.
     System.out.println(true ^ true);

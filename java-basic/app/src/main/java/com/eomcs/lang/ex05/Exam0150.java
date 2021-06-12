@@ -15,7 +15,7 @@ public class Exam0150 {
 
     // byte + byte = int
     // => 연산을 하기 전에 byte 값이 int로 암시적 형변환 된다.
-    //byte r1 = b + b; // 컴파일 오류!
+    //byte r1 = b + b; // 컴파일 오류! -> 연산하면서 int로 변환하기 때문에 그릇이 더 작은 byte는 int를 담을 수 없다
 
     // short + short = int
     // => 연산을 하기 전에 short 값이 int로 암시적 형변환 된다.
@@ -34,20 +34,20 @@ public class Exam0150 {
     int r5 = s + i; // OK
 
     // int + long = long
-    // => int가 long으로 암시적 형변환 한 이후에 연산을 수행한다.
-    //int r6 = i + l; // 컴파일 오류!
+    // => int가 long으로 암시적 형변환 한 이후에 연산을 수행한다. 
+    //int r6 = i + l; // 컴파일 오류! -> int가 그릇이 더 작기 때문에 더 큰 long을 담으려면 long으로 강제형변환을 해야한다
 
     // long + float = float
     // => long이 float으로 암시적 형변환 한 후에 연산을 수행한다.
-    //long r7 = l + f; // 컴파일 오류!
+    //long r7 = l + f; // 컴파일 오류! -> float보다 long이 그릇이 더 작기 때문에 더 큰 float을 담으려면 float으로 강제형변환을 해야한다
 
     // int + float = float
     // => 정수 타입의 값과 부동소수점 타입의 값을 연산하면
     //    정수 타입의 값이 암시적 형변환을 통해 부동소수점으로 바뀐다.
-    //int r8 = i + f; // 컴파일 오류!
+    //int r8 = i + f; // 컴파일 오류! -> 마찬가지
 
     // float + double = double
-    //float r9 = f + d; // 컴파일 오류!
+    //float r9 = f + d; // 컴파일 오류! -> float이 double보다 그릇이 작기 때문에 double로 강제형변환이 필요하다
 
     // byte + short + int + long + float + double = double
     //long r10 = b + s + i + l + f + d; // 컴파일 오류!

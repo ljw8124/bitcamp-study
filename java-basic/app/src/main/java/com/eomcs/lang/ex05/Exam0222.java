@@ -1,4 +1,4 @@
-// 관계 연산자 : 부동소수점 비교 
+// 관계 연산자 : 부동소수점 비교 2진수로 연산되기 때문에 오차가 있음
 package com.eomcs.lang.ex05;
 
 public class Exam0222 {
