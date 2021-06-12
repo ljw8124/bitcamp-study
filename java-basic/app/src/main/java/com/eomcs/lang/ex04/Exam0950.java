@@ -15,7 +15,7 @@ public class Exam0950 {
     boolean bool; //boolean은 논리 변수 이기 때문에
     //bool = (boolean) 1; // 컴파일 오류!
     
-    // 예) 문자열("_") ==/==> 정수, 부동소수점, 문자, boolean
+    // 예) 문자열("_") ==/==> 정수, 부동소수점, 문자, boolean 문자열은 바꿀 수 없음.
     //boolean v1 = (boolean) "true"; // 컴파일 오류!
     //char v2 = (char) "가"; // 컴파일 오류!
     //int v3 = (int//) "123";  컴파일 오류!
