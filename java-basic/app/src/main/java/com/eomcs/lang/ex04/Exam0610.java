@@ -8,11 +8,14 @@ public class Exam0610 {
     // => 언제든지 값을 변경할 수 있다.
     int a;
     a = 10;
+    // System.out.println(a) 했을 때 10출력
     a = 100;
+    // System.out.println(a) 했을 때 100출력
     a = -300;
+    // System.out.println(a) 했을 때 -300출력
 
     // 상수
-    // => 값을 오직 한 번만 저장할 수 있다.
+    // => 값을 오직 한 번만 저장할 수 있다. 이 말은 후에 변경이 불가능하다는 말이다
     // => 변수 앞에 final을 붙여라!
     final int b;
     b = 100;

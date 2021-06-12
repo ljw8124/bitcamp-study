@@ -15,12 +15,12 @@ public class Exam0930 {
     //
     // float ==> int 
     float f = 3.14f;
-    int i = (int)f;  // 소수점 이하가 제거된다.
+    int i = (int)f;  // 소수점 이하가 제거된다. -> float을 강제로 int로 변환함
     System.out.println(i);
 
     // double ==> long
     double d = 9876.56789;
-    long l = (long)d; // 소수점 이하가 제거된다.
+    long l = (long)d; // 소수점 이하가 제거된다. double을 강제로 long으로 변환함
     System.out.println(l);
   }
 }

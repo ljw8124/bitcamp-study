@@ -12,13 +12,13 @@ public class Exam0950 {
     // 그 외에는 형변환 불가!
 
     // 예) 정수, 부동소수점 ==/==> boolean
-    boolean bool;
+    boolean bool; //boolean은 논리 변수 이기 때문에
     //bool = (boolean) 1; // 컴파일 오류!
     
-    // 예) 문자열 ==/==> 정수, 부동소수점, 문자, boolean
+    // 예) 문자열("_") ==/==> 정수, 부동소수점, 문자, boolean
     //boolean v1 = (boolean) "true"; // 컴파일 오류!
     //char v2 = (char) "가"; // 컴파일 오류!
-    //int v3 = (int) "123"; // 컴파일 오류!
+    //int v3 = (int//) "123";  컴파일 오류!
     //float v4 = (int) "3.14f"; // 컴파일 오류!
   }
 }

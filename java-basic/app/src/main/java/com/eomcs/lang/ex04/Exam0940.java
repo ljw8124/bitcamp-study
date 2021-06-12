@@ -1,6 +1,7 @@
 package com.eomcs.lang.ex04;
 
 //# 형변환 - 명시적 형변환 : 큰 정수 변수의 값을 작은 정수 변수에 저장
+//boolean < char < byte < short < interger < long < float < double
 //
 public class Exam0940 {
   public static void main(String[] args) {
