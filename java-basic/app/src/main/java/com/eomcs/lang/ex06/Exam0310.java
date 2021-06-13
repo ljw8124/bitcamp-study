@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex06;
 
-//# 흐름 제어문 - 반복문 while
+//# 흐름 제어문 - 반복문 while -> 조건을 잘설정하지 않으면 무한 루프에 빠지게됨 주의!
 //
 public class Exam0310 {
 

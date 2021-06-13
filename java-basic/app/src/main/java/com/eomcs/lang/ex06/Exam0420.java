@@ -9,7 +9,7 @@ public class Exam0420 {
       System.out.println(i);
 
     // 그래서 다음과 같이 i 변수의 값을 조회하려 하면 
-    // 컴파일 오류가 발생한다.
+    // 컴파일 오류가 발생한다. -> 그러므로 그전에 선언을 하는 것이 좋음
     //System.out.println(i); // 컴파일 오류!
 
     System.out.println("----------------------");

@@ -11,8 +11,8 @@ public class Exam0320 {
     while (count < 100) {
       //count++;
       //sum += count;
-      sum += ++count;
+      sum += ++count; //위에 두 줄을 한줄로 축약
     }
-    System.out.printf("count=%d, sum=%d\n", count, sum);
+    System.out.printf("count=%d, sum=%d\n", count, sum); //sum = 5050
   }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Exam0470 {
   public static void main(String[] args) {
     // 제네릭 적용
-    ArrayList<String> list = new ArrayList<>();
+    ArrayList<String> list = new ArrayList<>(); //String 값을 넣었기 때문에 String만 넣을 수 있다
     list.add("홍길동");
     list.add("임꺽정");
     list.add("유관순");
