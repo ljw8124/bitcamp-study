@@ -25,5 +25,6 @@ public class Exam0412 {
     //b = 127L;
     //s = 32757L;
     //int i = 100L;
+    
   }
 }

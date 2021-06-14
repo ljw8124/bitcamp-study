@@ -11,10 +11,10 @@ public class Exam0310 {
     
     //println() 메서드(도구)
     //- 콘솔(console)로 값을 출력할 때 사용하는 도구이다.
-    //- 즉 JVM의 표준 출력 장치로 값을 출력한다.
+    //- 즉 JVM의 표준 출력 장치로 값을 출력한다. println()에 적힌 값이 출력
     //- 사용법
     //    System.out.println(리터럴 또는 변수, 결과가 생성되는 명령문)
     //
-    System.out.println(age); 
+    System.out.println(age); //age의 값인 20이 출력된다.
   }
 }

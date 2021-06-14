@@ -6,7 +6,7 @@ public class Exam0422 {
   public static void main(String[] args) {
 
     // 8바이트 부동소수점 변수
-    //- 유효자릿수 15자리 부동소수점 저장 가능
+    //- 유효자릿수 15~16자리 부동소수점 저장 가능
     //- 10 진수로 부동소수점을 표현할 경우 소수점을 제외한 숫자가 15 개인 경우 정상적으로 메모리에 저장된다는 의미
     //
     double d;
@@ -33,16 +33,16 @@ public class Exam0422 {
     System.out.println(d);
     
     // 주의!
-    //'유효자릿수'는 부가능 여동소수점의 저장 부를 간단히 계산하기 위해 나온 개념이다.
+    //'유효자릿수'는 부가능 부동소수점의 저장 부를 간단히 계산하기 위해 나온 개념이다.
     //실제는 유효자릿수에 해당하는 부동소수점이라도 정규화 과정을 통해 2 진수로 변환되는 과정에서 
     //값이 짤리는 경우가 있음을 잊지 말라!
     //
     //
     // 단정도(single precision)와 배정도(double precision)
     //- double 변수는 float 변수에 두 배 정도 더 정밀한 값을 저장할 수 있다.
-    //  그래서 '배정도(double precision)'라 한다.
+    //  그래서 '배정도(double precision)'라 한다. ->double은 배정도
     //- float은 double과 비교하여 한 배 정도 정밀한 값을 저장할 수 있다.
-    //  그래서 '단정도(single precision)'이라 한다.
+    //  그래서 '단정도(single precision)'이라 한다. ->float은 단정도
     //
   }
 }

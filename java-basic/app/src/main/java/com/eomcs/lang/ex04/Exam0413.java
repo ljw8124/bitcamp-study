@@ -1,7 +1,7 @@
 package com.eomcs.lang.ex04;
 
 //# 정수 변수 - 크기가 다른 변수끼리 값 할당
-// 크기 비교 boolean < char < byte < short < integer < long < float < double
+// 크기 비교 char < byte < short < integer < long < float < double
 //
 public class Exam0413 {  
   public static void main(String[] args) {
@@ -39,13 +39,13 @@ public class Exam0413 {
     i2 = s;
     s2 = s;
     //b2 = s; // 컴파일 오류!
-    //c2 = s; // 컴파일 오류! char(0 ~ 65535) | int(-32768 ~ 32767)
+    //c2 = s; // 컴파일 오류! char(0 ~ 65535) | short(-32768 ~ 32767)
     
     // byte ===> byte 이상
     l2 = b;
     i2 = b;
     s2 = b;
     b2 = b;
-    //c2 = b; // 컴파일 오류! char(0 ~ 65535) | byte(-128 ~ 127)
+    //c2 = b; // 컴파일 오류! char(0 ~ 65535) | byte(-128 ~ 127) ->char은 음수값을 포함하지 않기 때문에 
   }
 }

@@ -6,7 +6,7 @@ public class Exam0220 {
   
   public static void main(String[] args) {
     
-    //변수 선언 보다 변수 사용이 먼저 올 수 없다.
+    //변수 선언 보다 변수 사용이 먼저 올 수 없다. 변수 선언도 안했는데 변수를 사용할 수는 없음.
     count = 50; // 문법 오류// -> 변수 선언보다 먼저 왔기 때문에 컴파일 오류가 나온다.
     
     int count;

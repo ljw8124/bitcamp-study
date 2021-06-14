@@ -5,7 +5,7 @@ package com.eomcs.lang.ex04;
 //- 문법
 //    변수명 = 변수 또는 리터럴;
 //- 용어 
-//    = : 할당 연산자(assignment operator)
+//    = : 할당 연산자(assignment operator) -> 같다는 의미가 아니다. 배정 연산자의 의미를 가짐
 //    l-value : = 왼쪽에 있는 변수를 가리킨다. l-value는 리터럴이 될 수 없다.
 //    r-value : = 오른쪽에 있는 변수나 리터럴을 가리킨다.
 //- 의미
@@ -20,7 +20,7 @@ public class Exam0130 {
     // : =
     //- 
     //- 문법
-    //    변수명 = 값;
+    //    변수명 = 값; -> 값을 변수명에 대입한다
     age = 20;
     System.out.println("당신의 나이는 : " + age + '살');
     

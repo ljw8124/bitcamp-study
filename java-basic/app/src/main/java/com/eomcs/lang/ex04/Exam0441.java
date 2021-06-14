@@ -15,7 +15,7 @@ public class Exam0441 {
     System.out.println(b2);
 
     // 주의!
-    // - JVM 내부에서 true, false를 정수 값으로 다룬다고 해서 boolean 변수에 직접 1과 0을 저장할 수 없다.
+    // - JVM 내부에서 true, false를 정수 값으로 다룬다고 해서 boolean 변수에 직접 1과 0을 저장할 수 없다. 진짜 숫자 0또는1로 저장하는게 아님
     //b1 = 1; // 컴파일 오류!
     //b2 = 0; // 컴파일 오류!
   }

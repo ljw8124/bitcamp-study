@@ -9,7 +9,7 @@ package com.eomcs.lang.ex03;
 public class Exam0340 {
   public static void main(String[] args) {
     
-    //## 4byte(float) 부동소수점의 유효자릿수
+    //## 4byte(float) 부동소수점의 유효자릿수 -> 상대적으로 적음 (단정도)
     //소수점을 뺀 후 7자리 숫자까지는 거의 정상적으로 저장된다.
     System.out.println(999.9999f);
     System.out.println(999999.9f);
@@ -22,7 +22,7 @@ public class Exam0340 {
     System.out.println(987654321123456.7f);
     System.out.println("----------------------------");
     
-    //## 8byte(double) 부동소수점의 유효자릿수
+    //## 8byte(double) 부동소수점의 유효자릿수 -> float 메모리에 비해서 2배 더 정밀한 값 저장 가능! (배정도)
     //소수점을 뺀 후 16자리 숫자까지는 거의 정상적으로 저장된다.
     System.out.println(987654321.1234567);
     System.out.println(9.876543211234567);

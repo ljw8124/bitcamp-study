@@ -7,7 +7,7 @@ package com.eomcs.lang.ex04;
 public class Exam0320 {
   public static void main(String[] args) {
     
-    int age1 = 20;
+    int age1 /* 이 부분이 l-value */ = 20; /* 이 부분이 r-vaule */
     
     //r-value 자리에 변수를 놓을 수 있다.
     int age2 = age1;

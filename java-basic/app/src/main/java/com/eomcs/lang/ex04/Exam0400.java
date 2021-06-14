@@ -13,20 +13,20 @@ public class Exam0400 {
   public static void main(String[] args) {
     //자바 원시 데이터 타입 변수
     //- 정수 (크기순)
-    byte b;  // 1바이트 크기의 메모리
-    short s; // 2바이트 크기의 메모리 
-    int i;   // 4바이트 크기의 메모리 (defalut 값)
-    long l;  // 8바이트 크기의 메모리
+    byte b;  // 1바이트(8bit) 크기의 메모리
+    short s; // 2바이트(16bit) 크기의 메모리 
+    int i;   // 4바이트(32bit) 크기의 메모리 (defalut 값)
+    long l;  // 8바이트(64bit) 크기의 메모리
     
     //- 부동소수
-    float f;   // 4바이트 크기의 메모리
-    double d;  // 8바이트 크기의 메모리 (defalut 값)
+    float f;   // 4바이트(32bit) 크기의 메모리
+    double d;  // 8바이트(64bit) 크기의 메모리 (defalut 값)
     
     //- 문자코드
-    char c;  // 2바이트 크기의 메모리
+    char c;  // 2바이트(16bit) 크기의 메모리
     
     //- 논리 (true & false)
-    boolean bool;  // 자바 언어 명세서에는 메모리의 크기가 정의되어 있지 않다. 다만 JVM 명세서에는 int 로 다룬다고 나와있다.
+    boolean bool;  // 자바 언어 명세서에는 메모리의 크기가 정의되어 있지 않다. 다만 JVM 명세서에는 int(4byte) 로 다룬다고 나와있다.
     
     //레퍼런스 변수
     String str; // 자바 언어 명세서에는 메모리의 크기가 정의되어 있지 않다. 메모리 주소를 저장할 만큼 큰 크기 -> String의 경우 너무 많이 쓰여서 내장됨
@@ -46,7 +46,7 @@ public class Exam0400 {
 //   - float  : 4byte 메모리 (유효자릿수 7자리)
 //   - double : 8byte 메모리 (유효자릿수 15자리)
 // - 문자
-//   - char   : 2byte 메모리 (0 ~ 65535). UCS-2 코드 값 저장.
+//   - char   : 2byte 메모리 (0 ~ 65535). UCS-2 코드 값 저장. -> 이때 음수값 포함 x
 // - 논리값
 //   - boolean : JVM에서 4 바이트 int 메모리를 사용한다.
 //               배열일 경우 1 바이트 byte 메모리를 사용한다.
