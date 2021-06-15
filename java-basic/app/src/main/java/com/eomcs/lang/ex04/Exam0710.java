@@ -16,7 +16,7 @@ public class Exam0710 {
 }
 
 // 인스턴스 변수(instance variable)
-// - new 명령을 사용하여 인스턴스를 생성할 때 준비되는 변수
+// - new 명령을 사용하여 인스턴스를 생성할 때 준비되는 변수 -> 실례(실제적으로 존재하는 예를 의미함)
 //
 // 클래스 변수(class variable = static variable)
 // - 클래스가 로딩될 때 준비되는 변수

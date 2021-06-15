@@ -7,15 +7,18 @@ public class Exam0650 {
     int i = 2;
 
     ++i;
+    // i = i + 1;
+
     // i 메모리의 값을 먼저 증가시킨다.
     // 그리고 i 메모리의 값을 그 자리에 놓는다.
+    // 후위 연산자와 반대
 
     ++i;
 
     System.out.println(i); // 4
 
     System.out.println(++i); 
-    // i = i + 1
+    // i = i + 1;
     // System.out.println(5)
 
     System.out.println(i); // 5

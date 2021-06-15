@@ -5,7 +5,7 @@ package com.eomcs.lang.ex05;
 public class Exam0671 {
   public static void main(String[] args) {
     int a = 5;
-    int r = --a;
+    int r = --a; // r = 4
     // 위의 문장은 다음 두 문장으로 변경된다.
     // a = a - 1;
     // int r = a;

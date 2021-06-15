@@ -11,7 +11,7 @@ public class Test04 {
     a[0] = 100;
     a[1] = 200;
     a[2] = 300;
-    // a[3] = 400; // 컴파일은 되나 실행이 안됨.
+    // a[3] = 400; // 컴파일은 되나 실행이 안됨. 배열 안에 없기 때문에 실행 불가
 
     System.out.println(a[0]);
     System.out.println(a[1]);

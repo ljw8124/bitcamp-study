@@ -10,7 +10,7 @@ public class Exam0822 {
     switch (a) {
       case 1:
         //switch 바깥 블록에 같은 이름의 변수가 있다.
-        //int a; //컴파일 오류! 
+        //int a; //컴파일 오류! 위에서 이미 int a 가 선언되었기 때문에
         
         // case 문에서 선언한 변수는 switch 문에 소속된다.
         int b;

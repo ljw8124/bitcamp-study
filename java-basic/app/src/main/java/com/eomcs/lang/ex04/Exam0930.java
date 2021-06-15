@@ -11,7 +11,7 @@ public class Exam0930 {
     //
     // 해결책?
     // - 컴파일러에게 강제로 값을 넣을 것을 명시하라!
-    // - 이것을 "명시적 형변환(explicit type conversion)"이라 부른다.
+    // - 이것을 "명시적 형변환(explicit type conversion)" = 강제형변환 이라 부른다.
     //
     // float ==> int 
     float f = 3.14f;

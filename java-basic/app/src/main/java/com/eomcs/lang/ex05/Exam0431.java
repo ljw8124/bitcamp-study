@@ -4,7 +4,7 @@ package com.eomcs.lang.ex05;
 //
 public class Exam0431 {
   public static void main(String[] args) {
-    // 음수를 이동:
+    // 음수를 이동: -> 이렇게 쓰이는 일은 거의 없다
     // - 왼쪽 빈자리는 0으로 채운다.
     //
 

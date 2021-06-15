@@ -5,14 +5,14 @@ public class Exam0220 {
   public static void main(String[] args) {
     double d1 = 987.6543;
     double d2 = 1.111111;
-    System.out.println((d1 + d2) == 988.765411);
+    System.out.println((d1 + d2) == 988.765411); //false
     // 결과는 false이다.
     // 이유?
     // - 부동소수점 값을 연산할 때 IEEE 754 명세에 따라 
     //   작업을 수행한다. 그 과정에 값의 왜곡이 발생할 수 있다.
-    // - CPU나 OS, JVM의 문제가 아니다.
+    // - CPU나 OS, JVM의 문제가 아니다. 2진수로 산술 하면서 오차가 발생하는 것
     // - IEEE 754 명세에 따라 부동소수점을 처리하는 모든 
-    //   컴퓨터에서 발생하는 문제이다.
+    //   컴퓨터에서 발생하는 문제이다. -> 현재로서는 해결 불가
     System.out.println(d1);
     System.out.println(d2);
     System.out.println(d1 + d2); 
@@ -32,7 +32,7 @@ public class Exam0220 {
     
     double x = 234.765411;
     double y = 754.0;
-    System.out.println((x + y) == 988.765411);
+    System.out.println((x + y) == 988.765411); //true
     
     System.out.println(x);
     System.out.println(y);
@@ -54,12 +54,13 @@ public class Exam0220 {
     // IEEE 754의 변환 공식에 따라 발생되는 이런 문제를 
     // 실무 프로그래밍 할 때 해결하는 방법?
     //
-    System.out.println((d1 + d2) == (x + y)); // false
+    System.out.println((d1 + d2) == (x + y)); // false 극소수의 차이로 오차가 발생하므로 false가 나온다 0.00001정도의 차이
 
     // 소수점 뒤에 붙은 극소수의 값을 무시하면 된다. -> 산술 오류 해결 방법
     // => JVM이 자동으로 처리하지 않는다.
     // => 다음과 같이 개발자가 직접 처리해야 한다.
     double EPSILON = 0.00001;
-    System.out.println(Math.abs((d1 + d2) - (x + y)) < EPSILON);
+    System.out.println(Math.abs((d1 + d2) - (x + y)) < EPSILON); // 이 정도면 오차가 적다는 의미로 값이 같다는 것으로 의제할 수 있음 => 같다라고 처리
+    //Math.ab()은 절대 값을 산출하라는 것
   }
 }

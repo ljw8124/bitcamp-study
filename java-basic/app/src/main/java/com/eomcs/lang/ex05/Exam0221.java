@@ -16,5 +16,6 @@ public class Exam0221 {
     // => 다만 계산 결과를 절대값으로 만든 후에 오차 이하의 값인지 비교하라!
     float r = f1 * f2 - 0.01f;
     System.out.println(Math.abs(r) <= Float.POSITIVE_INFINITY);
+    // 빼기와 같이 절대값을 이용하여 극히 작은 수를 제외하고는 모두 같은것이 되므로 이렇게 비교 하는 것이 좋음
   }
 }

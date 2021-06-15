@@ -11,7 +11,7 @@ public class Exam0142 {
     int x = Integer.MAX_VALUE; // 0x7fffffff = 약 +21억
     int y = Integer.MAX_VALUE; // 0x7fffffff = 약 +21억
     
-    int r1 = x + y; // 0x7fffffff + 0x7fffffff = 0xfffffffe = -2
+    int r1 = x + y; // 0x7fffffff + 0x7fffffff = 0xfffffffe = -2 => int와 int의 연산값은 int이므로 그 초과값은 잘리게 되어 의도치 않은 값이 산출됨 //-2
     //   0111 1111 1111 1111 1111 1111 1111 1111(x)
     // + 0111 1111 1111 1111 1111 1111 1111 1111(y)
     // ---------------------------------------------
@@ -34,13 +34,14 @@ public class Exam0142 {
     // 진정한 해결책?
     // - int와 int 연산 결과가 int 크기를 넘어갈 것 같으면 
     //   형변환하여 계산하라!
-    r2 = (long)x + (long)y; //long으로 강제형변환한 후 더하게 되므로 long은 제대로 출력된다
+    r2 = (long)x + (long)y; //long으로 강제형변환한 후 더하게 되므로 long은 제대로 출력된다. 애초에 연산하는 값을 long으로 바꿔주어야한다
     System.out.println(r2);
+
   }
 }
 
 // 정리!
-// - int와 int의 연산 결과는 int이다.
+// - int와 int의 연산 결과는 int이다. 자바의 최소 연산 단위는 int, if short + byte 는 성립 할 수 없음.
 // - float과 float의 연산 결과는 float이다.
 // - 즉 연산 결과는 피연산자의 타입과 같다.
 // - 그래서 두 값을 계산했을 때 결과 메모리를 초과할 경우

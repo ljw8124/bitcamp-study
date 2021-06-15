@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex04;
 
-//# 부동소수점 변수 - 변수의 메모리 크기
+//# 부동소수점 변수 - 변수의 메모리 크기 = 실수
 //
 public class Exam0421 {
   public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Exam0421 {
     System.out.println(f); // OK
     
     // 주의!
-    //- 유효자릿수가 7자리를 넘어가면 정상적으로 값을 저장되지 않을 수 있다.
+    //- 유효자릿수가 7자리를 넘어가면 정상적으로 값을 저장되지 않을 수 있다. -> 에러가 나오지 않고 값이 잘린다 => 주의해야함
     f = 9.8765456f; // 맨 뒤의 값이 반올림 된다.
     System.out.println(f);
     

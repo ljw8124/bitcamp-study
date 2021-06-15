@@ -5,8 +5,9 @@ package com.eomcs.lang.ex05;
 public class Exam0630 {
   public static void main(String[] args) {
     int i = 7;
+    i = i++;
 
-    int j = i++;
+    // int j  = i++;
     
     // 위 문장은 컴파일될 때 다음과 같은 형태로 변환된다.
     // int temp = i;
@@ -25,7 +26,8 @@ public class Exam0630 {
     // 3) 할당 연산자 실행
     //    => j <=== 7 실행
 
-    System.out.println(j);
+    // System.out.println(j);
     System.out.println(i);
+    
   }
 }
