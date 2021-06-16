@@ -32,7 +32,7 @@ public class Exam0140 {
       System.out.println("--------------------------");
     }
     else
-      System.out.println("미성년입니다.");
+      System.out.println("미성년입니다."); //{} 안써도 무관하지만 쓰는 것을 권고함
 
     // if, else 둘 중 하나만 블록으로 묶을 수 있다.
     if (age >= 19)

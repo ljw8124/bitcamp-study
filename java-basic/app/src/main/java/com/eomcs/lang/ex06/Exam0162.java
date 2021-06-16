@@ -14,7 +14,7 @@ public class Exam0162 {
     // 실무에서는 다음과 같이 정렬한다.
     // 주의!
     // else if 라는 문법은 없다.
-    // 그냥 다음과 같이 정렬한 것이다.
+    // 그냥 다음과 같이 정렬한 것이다. 보기좋게 정렬한 것일 뿐
     if (age < 8)
       System.out.println("아동입니다.");
     else if (age < 14)

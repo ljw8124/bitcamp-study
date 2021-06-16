@@ -12,7 +12,7 @@ public class Exam0120 {
     // => 블록으로 묶지 않으면 첫 번째 문장만 if에 종속된다.
     // => 들여쓰기는 문법에 영향을 끼치지 않는다.
     if (age >= 19)  
-      System.out.println("성인이다."); // 이 문장만 if에 소속된다.
+      System.out.println("성인이다."); // 이 문장만 if에 소속된다. 밑 문장은 들여쓰기만 된 것이고 종속되지 않음
       System.out.println("군대 가야한다.");
       System.out.println("일해야 한다.");
       System.out.println("세금 납부해야 한다.");
