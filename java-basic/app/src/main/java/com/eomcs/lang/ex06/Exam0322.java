@@ -13,7 +13,8 @@ public class Exam0322 {
     sum = 0;
     while (count < 100) {
       count++;
-      if (count > 50) // 50을 넘어가면 합을 수행하지 않지만 100까지 계속 반복한다. count가 50이상이 된 후로는 sum은 축척되지않고 count만 계속 올라감
+      if (count > 50) // 50을 넘어가면 합을 수행하지 않지만 100까지 계속 반복한다.
+        // count가 50이상이 된 후로는 sum은 축척되지않고 count만 계속 올라감
         continue;
       sum += count;
     }

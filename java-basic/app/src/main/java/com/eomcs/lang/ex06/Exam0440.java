@@ -9,12 +9,21 @@ public class Exam0440 {
      * names[3] = "윤봉길"; names[4] = "안중근";
      *
      * String[] names = new String[] {"홍길동", "임꺽정", "유관순", "윤봉길", "안중근"};
+     * 
+     * String[] names;
+     * names = new String[] {"홍길동", "임꺽정", "유관순", "윤봉길", "안중근"};
      */
 
+
+    // 배열 변수 선언과 동시에 배열 초기화를 실행할 때는 new String[]을 생략할 수 있다
     String[] names = {"홍길동", "임꺽정", "유관순", "윤봉길", "안중근"};
+
+    // 위에 네 가지 방법 다 똑같이 배열을 정의하는 방법이다
 
     for (int i = 0; i < names.length; i++)
       System.out.println(names[i]);
+
+    //for문은 배열과 함께 쓸 때 유용하게 쓰인다
 
   }
 }

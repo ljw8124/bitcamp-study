@@ -13,14 +13,15 @@ public class Exam0221 {
     System.out.println("3. 시설경비");
     System.out.print("지원 분야의 번호를 입력하세요? ");
     int no = keyScan.nextInt();
+    // 문자를 입력하면 예외(exception) 발생
 
     System.out.println("제출하실 서류는 다음과 같습니다.");
-    switch (no) {
+    switch (no) { // no는 int이기 때문에 4byte 정수값만 들어갈 수 있다
       case 1:
         System.out.println("정보처리자격증");
         System.out.println("졸업증명서");
         System.out.println("이력서");
-        break; // 여기까지만 실행한다.
+        break; // 여기까지만 실행한다. -> 블록 밖으로 탈출
       case 2:
         System.out.println("졸업증명서");
         System.out.println("이력서");

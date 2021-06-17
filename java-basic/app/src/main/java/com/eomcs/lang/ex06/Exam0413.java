@@ -9,9 +9,9 @@ public class Exam0413 {
 
     // 조건문 제거
     int i = 1;
-    for (;;) {
+    for (;;) { // 조건이 없다는 것은 무한루프를 의미함, 빈자리여도 ';;'은 작성해야함
       if (i > 5)
-        break;
+        break; // 무한루프이기 때문에 탈출조건을 명시해야함
       System.out.println(i);
       i++;
     }

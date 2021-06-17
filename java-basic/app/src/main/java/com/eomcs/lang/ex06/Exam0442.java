@@ -10,6 +10,5 @@ public class Exam0442 {
     for (int i = 0; i < names.length; i += 2) { // 홍길동 유관순 안중근이 출력됨 0번 2번 4번 값
       System.out.println(names[i]);
     }
-
   }
 }

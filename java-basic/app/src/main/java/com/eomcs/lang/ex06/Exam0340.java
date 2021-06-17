@@ -9,7 +9,7 @@ public class Exam0340 {
     // 1부터 10까지 출력하기
     do
       System.out.println(++i);
-    while (i < 10);
+    while (i < 10); // 일반 while 문과 다르게 세미콜론 꼭 써야함
 
     System.out.println("---------------------");
 

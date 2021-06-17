@@ -10,7 +10,7 @@ public class Exam0411 {
     // 증감문 제거
     for (int i = 1; i <= 5;) {
       System.out.println(i);
-      i++;
+      i++; // 증감문을 따로 작성
     }
 
   }
