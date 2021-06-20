@@ -9,6 +9,7 @@ public class Exam0270 {
   //       예) m1("aaa", "bbb", "aaa@test.com", "bbb@test.com");
   //       어느 값이 names 배열에 들어가고, 어느 값이 emails 배열에 들어가는가?
   //  static void m1(String... names, String... emails) {} // 컴파일 오류!
+  //  static void m1(String[] names, String[] emxails) {} // 배열파라미터는 여러개 쓸 수 있음
   //
   //    => 중간에 다른 타입이 온다 하더라도 안된다.
   //  static void m1(String... names, int a, String... emails) {}// 컴파일 오류!
@@ -27,7 +28,7 @@ public class Exam0270 {
   // 예) m2("aaaa");
   //  static void m2(String... names, String a) {} // 컴파일 오류!
   //  static void m2(boolean b, String... names, int a) {} // 컴파일 오류!
-  static void m2(int a, String... names) {} // OK!
+  static void m2(int a, String... names) {} // OK! // 맨 뒤에 쓸 때만 가능
 
   public static void main(String[] args) {
     // 컴파일 확인하라!
@@ -35,7 +36,7 @@ public class Exam0270 {
 }
 
 // 결론!
-// - 메서드에 가변 파라미터는 한 개만 사용할 수 있다.
+// - 가변 파라미터는 메서드당 한 개만 사용할 수 있다
 // - 가변 파라미터는 반드시 맨 뒤에 와야 한다.
 // - 그 이유는 복잡한 사용을 막기 위해!
 
