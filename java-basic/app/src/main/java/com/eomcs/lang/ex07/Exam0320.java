@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex07;
 
-//# 메서드 : call by reference 주소를 메서드 파라미터에 저장
+//# 메서드 : call by reference 주소를 메서드 파라미터에 저장 -> main의 값도 변경
 //
 public class Exam0320 {
 

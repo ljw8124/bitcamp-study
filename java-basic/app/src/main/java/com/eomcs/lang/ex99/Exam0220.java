@@ -21,7 +21,7 @@ public class Exam0220 {
     // 재직여부? y
     // y
     System.out.print("이름? ");
-    System.out.println(keyScan.nextLine());
+    System.out.println(keyScan.nextLine()); // 줄 바꿈의 역할
     System.out.print("전화? ");
     System.out.println(keyScan.nextLine());
     System.out.print("이메일? ");

@@ -5,7 +5,7 @@ package com.eomcs.lang.ex07;
 public class Exam0340 {
 
   // main()에서 만든 int a와 int b의 값을 바꾸고 싶다면,
-  // primitive data type 값을 직접 넘기지 말고 
+  // primitive data type 값을 직접 넘기지 말고 -> 주소 자체를 변경한다면 main의 값도 변경
   // 객체(Object)에 담아 넘겨라!
   static class MyObject {
     int a;

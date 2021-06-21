@@ -4,15 +4,16 @@ package com.eomcs.lang.ex07;
 //
 public class Exam0430 {
 
-  static class MyObject {
+  // Heap 메모리에 어떤 변수를 만들어야 하는지 적어 놓은 설계도
+  // 이런 형태의 class를 nested class 중첩 class 라고 부른다
+  static class MyObject { // class 명이 다르기 때문에 .class 파일이 따로 생성
     int a;
     int b;
   }
-  
+
   static MyObject getMyObject() {
-    // Exam03_3.java 에 정의된 MyObject 클래스 사용
-    MyObject ref = new MyObject();
-    ref.a = 100;
+    MyObject ref = new MyObject(); // 이 때 Heap에 변수를 생성 
+    ref.a = 100; // .은 heap의 메모리에 찾아가서 a에 대입하라는 것이다
     ref.b = 200;
 
     return ref;
@@ -33,7 +34,8 @@ public class Exam0430 {
 //    => Method Area: MyObject 클래스를 로딩
 //    => Heap: MyObject 설계도에 따라 인스턴스 생성
 // 3) getMyObject() 호출 끝
-//    => JVM Stack: getMyObject() 관련 메모리(ref 변수) 제거
+//    => JVM Stack: getMyObject() 관련 메모리(ref 변수) 제거 (리턴하면서 삭제)
+//    => new로 생성한 Heap에 존재하는 변수는 제거되지 않고 남아있음 
 //    => MyObject의 인스턴스의 주소 리턴
 // 4) main() 호출 끝
 //    => JVM Stack: main() 관련 메모리 제거 

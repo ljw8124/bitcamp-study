@@ -21,9 +21,9 @@ public class Exam0620 {
           "실행 형식: java -cp ./bin/main -Dname=이름 -Dkor=국어점수 -Deng=영어점수 -Dmath=수학점수 com.eomcs.basic.ex07.Exam0620");
       return;
     }
-    int kor = Integer.parseInt(s1);
-    int eng = Integer.parseInt(s2);
-    int math = Integer.parseInt(s3);
+    int kor = Integer.parseInt(s1); // 문자인 숫자를 int로 변환
+    int eng = Integer.parseInt(s2); // 문자인 숫자를 int로 변환
+    int math = Integer.parseInt(s3); // 문자인 숫자를 int로 변환
 
     int sum = kor + eng + math;
 

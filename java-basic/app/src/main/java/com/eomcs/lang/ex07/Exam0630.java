@@ -12,8 +12,8 @@ public class Exam0630 {
 
     java.util.Set keySet = props.keySet();
 
-    for (Object key : keySet) {
-      String value = System.getProperty((String) key);
+    for (Object key : keySet) { // Object는 모든 걸 다 담을 수 있음(string,int ...등)
+      String value = System.getProperty((String) key); // 그래서 여기서 string이란걸 알려줌
       System.out.printf("%s = %s\n", key, value);
     }
   }

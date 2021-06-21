@@ -14,12 +14,12 @@ public class Exam0540 {
 
     if (args.length < 4) {
       System.out
-          .println("실행 형식: java -cp ./bin/main com.eomcs.lang.ex07.Exam0540 이름 국어점수 영어점수 수학점수");
+      .println("실행 형식: java -cp ./bin/main com.eomcs.lang.ex07.Exam0540 이름 국어점수 영어점수 수학점수");
       return;
     }
 
-    int sum = 0;
-    for (int i = 1; i < args.length; i++)
+    int sum = 0;    
+    for (int i = 1; i < args.length; i++) // 0번째 배열은 사람 이름이므로 제외, -> 1부터 시작
       sum += Integer.parseInt(args[i]);
 
     System.out.printf("이름: %s\n", args[0]);

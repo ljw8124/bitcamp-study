@@ -1,11 +1,12 @@
 package com.eomcs.lang.ex99;
 
+
 //# 키보드 입력 받기 - System.in 과 java.util.Scanner
 //
 public class Exam0210 {
   public static void main(String[] args) {
     // 1) 키보드로 입력한 데이터를 읽을 때 사용할 도구를 준비한다.
-    java.io.InputStream keyboard = System.in;
+    java.io.InputStream keyboard = System.in; //keyboard는 래퍼런스
 
     // 2) InputStream은 바이트 단위로 읽는 기능이 있다.
     //    바이트 단위로 읽어서 int나 문자열로 바꾸려면 또 코딩해야 하는 불편함이 있다.
@@ -27,8 +28,8 @@ public class Exam0210 {
     //   사용자가 엔터키를 누르면, 
     //   입력값으로 0d0a 2바이트 값이 들어오고,
     //   nextLine()은 그 전까지 들어온 데이터를 문자열로 만들어 리턴한다.
-    String str = keyScan.nextLine();
-    
+    String str = keyScan.nextLine(); // 사용자가 입력할 때 까지 기다림
+
     // 사용자가 입력한 문자열을 출력한다.
     System.out.println(str);
 

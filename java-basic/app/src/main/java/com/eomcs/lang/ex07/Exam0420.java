@@ -1,12 +1,16 @@
 package com.eomcs.lang.ex07;
 
 //# 메서드 : Heap 메모리 영역
+// => new 명령으로 생성한 변수 -> 인스턴스(주소값을 저장) 생성
+// vs. JVM stack은 메서드 호출할 때마다 생성하는 로컬 변수
+// vs. MethodArea는 .class 명령코드 저장
 //
 public class Exam0420 {
 
   static int[] getArray() {
     int[] arr = new int[] {100, 200, 300};
-    return arr;
+    //int [] arr = {100, 200, 300}; 이렇게 배열을 생성해도 Heap 에 메모리 저장
+    return arr; // return 하면서 stackmemory 에 있는 메모리 삭제
   }
 
   public static void main(String[] args) {

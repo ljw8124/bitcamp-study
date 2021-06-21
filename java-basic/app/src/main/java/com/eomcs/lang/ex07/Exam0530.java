@@ -8,9 +8,9 @@ public class Exam0530 {
     // 합계를 출력하는 프로그램을 작성하라.
     // $ java -cp ./bin/main com.eomcs.lang.ex07.Exam0530 200 43 56
     //
-    int sum = 0;
+    int sum = 0;    
     for (String arg : args)
-      sum += Integer.parseInt(arg);
+      sum += Integer.parseInt(arg); // String을 int로 바꿈, 이 때 Integer는 클래스
     System.out.printf("합계: %d\n", sum);
   }
 }
@@ -20,6 +20,8 @@ public class Exam0530 {
 // - 어떻게 아규먼트를 넘기는가?
 //
 // $ java 클래스명 값1 값2 값3
+//   eclipse 내에서 run configuration에서 아규먼트 설정도 가능함
+//   단 이 방법은 eclipse에서만 사용 가능하고 외부로 나가면 다시 설정해야함
 //
 // - 아규먼트는 공백으로 구분한다.
 // - JVM은 아규먼트의 개수만큼 문자열 배열을 만들어 저장한다.
