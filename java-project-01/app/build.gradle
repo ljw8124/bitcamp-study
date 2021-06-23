@@ -1,0 +1,31 @@
+plugins {
+    id 'java' // 자바 관련 작업을 수행할 때 사용할 도구 추가
+    id 'eclipse' // 이클립스 관련 작업을 수행할 때 사용할 도구 추가 if 설정안하면 cmd에서 명령 불가
+}
+
+// 자바 플러그인에 대해 컴파일 작업을 제어
+// =>자바 소스를 컴파일 할 때 utf-8로 자동으로 컴파일하라는 옵션
+// DSL = Domain Specific Language 특정 부분에 사용하는 프로그래밍 언어
+tasks.withType(JavaCompile) {
+    // $javac -encoding UTF-8 ...
+    options.encoding = 'UTF-8';
+}
+
+// eclipse plug-in의 .project 파일 생성 작업을 제어
+// => eclipse 프로젝트 이름을 설정
+eclipse {
+    project {
+        name = "java-project-01"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.1'
+    implementation 'com.google.guava:guava:30.0-jre'
+}
+
+
