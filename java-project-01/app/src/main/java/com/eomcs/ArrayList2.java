@@ -1,6 +1,6 @@
 package com.eomcs;
 
-public class ArrayList { // 데이터 목록 관리
+public class ArrayList2 { // 데이터 목록 관리
 
   static final int MAX_LENGTH = 100;
   static Object[] list = new Object[MAX_LENGTH];

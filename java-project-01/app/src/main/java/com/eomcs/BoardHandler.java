@@ -2,11 +2,43 @@ package com.eomcs;
 
 import java.util.Date;
 import java.util.Scanner;
-import com.eomcs.App.Board; // 다른이와의 의사소통이 중요한 이유
 
-public class BoardHandler {
+// concrete는 사용 가능한 class를 의미한다
+// <-> abstract class 는 추상적 클래스로 사용 불가
+public class BoardHandler implements Handler {
 
-  static Scanner keyScan; // App의 keyScan 과 공유(App line 22.) , 이 변수는 클래스 변수
+  //한 개의 게시글을 담을 변수를 설계
+  static class Board { // static 변수는 클래스 변수로 Method Area에 생성
+    String title;
+    String content;
+    String password;
+    int viewCount;
+    Date createdDate;
+  }
+
+  static Scanner keyScan; // App의 keyScan 과 공유(App line 17.) , 이 변수는 클래스 변수
+
+  public void execute() {
+    loop : while (true) {
+      System.out.print("게시글 관리> ");
+      String command = keyScan.nextLine();
+      //      if (command.equals("quit")) { // 문자열 직접 비교할 때
+      //        break;
+      //    }
+      switch (command) {
+        case "list": list(); break;
+        case "add": add(); break;
+        case "update": update(); break;
+        case "delete": delete(); break;
+        case "view": view(); break;
+        case "back":
+          break loop;
+        default:
+          System.out.println("지원하지 않는 명령입니다.");
+      }
+      System.out.println();
+    }
+  }
 
   static void list() {
     System.out.println("[게시물 목록]");
@@ -78,6 +110,7 @@ public class BoardHandler {
 
     System.out.println("게시글을 변경하였습니다.");
   }
+
   static void delete () {
     System.out.println("[게시글 삭제]");
     System.out.print("번호? ");
