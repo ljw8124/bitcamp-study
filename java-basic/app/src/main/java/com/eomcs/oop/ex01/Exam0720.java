@@ -17,7 +17,7 @@ public class Exam0720 {
     // 문법:
     //      import 패키지명.클래스명;
     //
-    Y2 obj;
+    Y2 obj; // import java.util과 같음
     obj = new Y2();
   }
 }
