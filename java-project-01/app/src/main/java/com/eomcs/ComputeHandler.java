@@ -3,7 +3,11 @@ package com.eomcs;
 import java.util.Scanner;
 
 public class ComputeHandler implements Handler{
-  static Scanner keyScan;
+  Scanner keyScan; // ComputeHandler는 두 개 이상 쓸 일이 없지만 그럼에도 인스턴스로 작성  
+
+  ComputeHandler (Scanner keyScan) {
+    this.keyScan = keyScan;
+  }
 
   public void execute () {
     while (true) {

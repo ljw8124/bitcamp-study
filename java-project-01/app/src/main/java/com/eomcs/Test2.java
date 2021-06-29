@@ -1,33 +1,30 @@
 package com.eomcs;
 
-class A {}
-class B {}
-class C {}
+class Calculator2 {
+  int result; 
+
+  static void plus(Calculator2 ref, int value) { // result의 주소를 저장하기 위해 사용
+    ref.result += value; // 인스턴스 변수이므로 주소를 지정하여 접근하여야 함
+  }
+}
 
 public class Test2 {
+
   public static void main(String[] args) {
-    A r1;
-    B r2;
-    C r3;
+    Calculator2 obj1 = new Calculator2 (); // class Calculator의 변수중 static 이 안붙은 변수를
+    // Heap에 생성하라는 것(인스턴스)
+    Calculator2 obj2 = new Calculator2();
 
-    r1 = new A();
-    //  r1 = new (B);
-    //  r1 = new C();
+    Calculator2.plus(obj1, 100); // (주소(장소), 값)
+    Calculator2.plus(obj1, 200);
+    Calculator2.plus(obj1, 300);
 
-    //  r2 = new A();
-    r2 = new B();
-    //  r2 = new C();
+    Calculator2.plus(obj2, 111);
+    Calculator2.plus(obj2, 222);
 
-    //  r3 = new A();
-    //  r3 = new B();
-    r3 = new C();
-
-
-    Object obj;
-
-    obj = new A();
-    obj = new B();
-    obj = new C();
+    System.out.println(obj1.result);
+    System.out.println(obj2.result);
 
   }
+
 }
