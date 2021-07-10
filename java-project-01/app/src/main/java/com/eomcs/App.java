@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class App {
 
+  // 클래스 영역에는 선언문만 가능하다.
+  // y = x + 3; 이나 System.out.println(); 같은 출력문은 불가능
+
   static Scanner keyScan = new Scanner(System.in);
 
   public static void main(String[] args) {

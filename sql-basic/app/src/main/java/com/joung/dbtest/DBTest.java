@@ -29,10 +29,12 @@ public class DBTest {
       DB.ST =  DB.CN.createStatement(); // 첫번째. 명령어 생성
 
       loop :while (true) {
-        System.out.println("   [ menu ]");
+        System.out.println("\t[ menu ]");
         System.out.println("1. connect code");
         System.out.println("2. select code");
         System.out.println("3. delete code");
+        System.out.println("4. select code partially");
+        System.out.println("5. update code");
         System.out.println("종료를 원한다면..quit");
         System.out.print("입력 : ");
         String input = keyScan.nextLine();
@@ -40,7 +42,8 @@ public class DBTest {
           case "1" : DB.dbConnect(); break;
           case "2" : DB.dbSelectAll(); break;
           case "3" : DB.dbDelete(); break;
-          case "4" :
+          case "4" : DB.dbSelect(); break;
+          case "5" : DB.dbUpdate(); break;
           case "quit" :
             System.out.println("입력을 종료합니다.");
             break loop;
@@ -119,16 +122,46 @@ public class DBTest {
 
   void dbSelect () {
     try {
-      System.out.println("보고자 하는 코드 입력>>> ");
+      System.out.print("보고자 하는 코드 입력>>> ");
       String view = keyScan.nextLine();
       msg = "select * from test where code = " + "'" + view + "'";
+      RS = ST.executeQuery(msg);
+
+      System.out.println("코드\t이름\t제목\t날짜\t조회수");
+      while (RS.next() == true) {
+        // 필드접근해서 데이터 가져올 때 getXXX()가 필요
+        int ucode =  RS.getInt("code");
+        String uname =  RS.getString("name");
+        String ucontent =  RS.getString("title");
+        java.util.Date udate = RS.getDate("wdate");
+        int ucnt = RS.getInt("cnt");
+        System.out.println(ucode + "\t" + uname + "\t" + ucontent + "\t" + udate + "\t" + ucnt);
+      }
     } catch(Exception ex) { }
+    System.out.println();
   }
 
   void dbUpdate() {
     try {
+      System.out.print("수정할 코드 입력>>> ");
+      String update = keyScan.nextLine(); // next() 는 공백주면 인식x, nextLine()은 공백도 인식.
+      System.out.print("수정 name 입력>>> ");
+      String uName = keyScan.nextLine();
+      System.out.print("수정 title 입력>>> ");
+      String uTitle = keyScan.nextLine();
 
-    } catch(Exception ex) { }
+      msg = "update test set name  = '" + uName +"', title = '"+ uTitle +"'"
+          + " where code = " + "'" + update + "'";
+      System.out.println(msg);
+      //ST = CN.createStatement();
+
+      int condition = ST.executeUpdate(msg); // 진짜 수정하기 위한 코드
+      if (condition > 0) {
+        System.out.printf("%s 데이터 수정 성공\n", update);
+        dbSelectAll();
+      } else { System.out.printf("%s 데이터 수정 실패\n",update);
+      }
+    } catch(Exception ex) {System.out.println("잘못된 정보를 입력하였습니다.");}
   }
 
   void dbDelete() {
@@ -137,8 +170,8 @@ public class DBTest {
       String del = keyScan.nextLine();
       msg = "delete from test where code = " + "'" + del + "'";
       System.out.println(msg);
-      int OK = ST.executeUpdate(msg);
-      if (OK > 0) {
+      int condition = ST.executeUpdate(msg);
+      if (condition > 0) {
         System.out.printf("%s 데이터 삭제 성공\n", del);
       } else { System.out.printf("%s 데이터 삭제 실패\n",del);
       }
