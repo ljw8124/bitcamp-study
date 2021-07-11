@@ -22,7 +22,10 @@ public class Board {
   public static void main(String[] args) {
     Board board = new Board();
 
-    System.out.println("[QnA 게시판에 오신 것을 환영합니다.]");
+    System.out.println("[게시판에 오신 것을 환영합니다.]");
+    board.boardList();
+    System.out.println();
+
     System.out.println("      Login");
     System.out.print("아이디 : ");
     id = keyScan.nextLine();
@@ -33,6 +36,34 @@ public class Board {
       board.admin();
     } else {
       board.member();
+    }
+
+  }
+
+  void boardList() {
+    System.out.println("\t[게시판 목록]");
+    System.out.println("1. 공지사항");
+    System.out.println("2. QnA 게시판");
+    System.out.println("3. 자유 게시판");
+    System.out.println("4. 스터디 게시판");
+    System.out.print("입력 : ");
+    String input = keyScan.nextLine();
+
+    switch (input) {
+      case "1":
+        System.out.println("공지사항");
+        break;
+      case "2":
+        System.out.println("QnA 게시판");
+        break;
+      case "3":
+        System.out.println("자유 게시판");
+        break;
+      case "4":
+        System.out.println("스터디 게시판");
+        break;
+      default:
+        System.out.println("잘못 입력하셨습니다.");
     }
 
   }
@@ -78,7 +109,7 @@ public class Board {
   void admin() {
     try {
       loop : while (true) {
-        if (id.equals("admin")) {
+        if (id.equals("admin") && pw.equals("admin")) {
           System.out.println("관리자 모드로 실행합니다");
           System.out.println("\t[menu]");
           System.out.println("1. 게시판 조회");
@@ -122,10 +153,18 @@ public class Board {
     } catch(Exception ex) { }
   }
 
+  void connector() {
+    if (id.equals("admin")) {
+      admin();
+    } else {
+      member();
+    }
+  }
+
   void member() {
     try {
       loop : while (true) {
-        if (id.equals("admin")) {
+        if (id.equals("member")) { // 데이터베이스의 아이디,패스워드와 비교
           System.out.printf("%s 님 환영합니다\n", id);
           System.out.println("\t[menu]");
           System.out.println("1. 게시판 조회");
