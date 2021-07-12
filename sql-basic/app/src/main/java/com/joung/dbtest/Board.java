@@ -2,7 +2,9 @@ package com.joung.dbtest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -10,6 +12,7 @@ public class Board {
   Connection CN = null;
   Statement ST = null;
   ResultSet RS = null;
+  PreparedStatement PST = null;
   String msg = "isud = crud 쿼리문 기술";
   int Gtotal = 0; // 전체 개수와 조회 개수 비교
   Scanner keyScan = new Scanner(System.in);
@@ -24,7 +27,8 @@ public class Board {
 
       board.dbSelectAll();
       // board.dbDelete();
-      board.dbUpdate();
+      // board.dbUpdate();
+      board.member();
 
     } catch(Exception ex) { }
   }
@@ -48,12 +52,12 @@ public class Board {
   public void dbSelectAll() {
     try {
       ST = CN.createStatement();
-      msg = "select * from test";
+      msg = "select * from id";
       ResultSet rs = ST.executeQuery(msg);
       while (rs.next() == true) {
-        int a = rs.getInt("code");
-        String b = rs.getString("name");
-        String c = rs.getString("title");
+        int a = rs.getInt("id");
+        String b = rs.getString("grade");
+        String c = rs.getString("pwd");
         System.out.println(a + "\t" + b + "\t" + c);
       }
     } catch(Exception ex) { }
@@ -69,12 +73,16 @@ public class Board {
       System.out.print("수정 title 입력>>> ");
       String uTitle = keyScan.nextLine();
 
-      msg = "update test set name  = '" + uName +"', title = '"+ uTitle +"'"
-          + " where code = " + "'" + update + "'";
-      System.out.println(msg);
+      msg = "update test set name = ?, title = ?, wdate = sysdate where code = ?";
+      PST = CN.prepareStatement(msg);
+      PST.setString(1, uName);
+      PST.setString(2, uTitle);
+      PST.setString(3, update);
+
+      System.out.println(msg); // 출력 불필요
       //ST = CN.createStatement();
 
-      int Condition = ST.executeUpdate(msg); // 진짜 수정하기 위한 코드
+      int Condition = PST.executeUpdate(); // 진짜 수정하기 위한 코드
       if (Condition > 0) {
         System.out.printf("%s 데이터 수정 성공\n", update);
         dbSelectAll();
@@ -88,7 +96,9 @@ public class Board {
     try {
       System.out.print("삭제할 코드 입력>>> ");
       String del = keyScan.nextLine(); // next() 는 공백주면 인식x, nextLine()은 공백도 인식.
-      msg = "delete from test where code = " + "'" + del + "'";
+      msg = "delete from test where code = ?";
+      CN.prepareStatement(msg);
+      PST.setString(1, del);
       System.out.println(msg);
       //ST = CN.createStatement();
 
@@ -100,6 +110,28 @@ public class Board {
       }
     } catch(Exception ex) { }
     System.out.println();
+  }
+
+  public void member() throws SQLException {
+
+    String msg = "select grade from id where id = 'admin'";
+    RS = ST.executeQuery(msg);
+    while (RS.next() == true) {
+      int level = RS.getInt("grade");
+      System.out.println(level);
+
+      switch (level) {
+        case 4:
+          System.out.println("성공");
+        case 3:
+          System.out.println("성공2");
+        case 2:
+          System.out.println("성공3");
+        case 1:
+        default:
+          break;
+      }
+    }
   }
 
 }

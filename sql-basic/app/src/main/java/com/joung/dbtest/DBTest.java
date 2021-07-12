@@ -2,6 +2,7 @@ package com.joung.dbtest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class DBTest {
   Connection CN = null; // DB서버연결정보
   Statement ST = null; // 명령어 생성
   ResultSet RS = null; // 조회결과를 기억, select 조회결과값 전체데이터를 기억
+  PreparedStatement PST = null;
   String msg = "isud = crud 쿼리문 기술";
   int Gtotal = 0; // 전체 개수와 조회 개수 비교
 
@@ -72,25 +74,23 @@ public class DBTest {
       String content = keyScan.nextLine();
 
       //3번째. 쿼리문 완성
-      msg = "insert into test(code,name,title,wdate,cnt) "
-          + "values("+ code + ",'"+ name +"','"+ content +"',sysdate,0)";
-      System.out.println(msg);
+      msg = "insert into test(code, name, title, wdate, cnt) values(?, ?, ?, sysdate, 0)";
+      PST = CN.prepareStatement(msg);
+      PST.setInt(1, code);
+      PST.setString(2, name);
+      PST.setString(3, content);
+      System.out.println(msg); // 출력안해도됨
 
       //4번째. 서버에서 실행 executeUpdate("insert ~~")
-      int OK =   ST.executeUpdate(msg); // 한건출력, 다수출력, 전체출력 - select 별도
-      if (OK > 0) {
+      int Condition = PST.executeUpdate(); // 한건출력, 다수출력, 전체출력 - select 별도
+      if (Condition > 0) {
         System.out.printf("%d 코드 데이터 저장 성공했습니다.\n",code);
-      } else { System.out.printf("%d 코드 데이터 저장 실패했습니다.\n",code);
-      }
-
-      msg = "select count(*) as hit from test";
-      RS = ST.executeQuery(msg);
-      if (RS.next() == true) {
-        Gtotal = RS.getInt("hit");
+      } else {
+        System.out.printf("%d 코드 데이터 저장 실패했습니다.\n",code);
       }
 
     } catch(Exception ex) {
-      System.out.printf("에러이유 = %s\n",ex);
+      System.out.println("이미 존재하는 코드 번호 입니다.");
     }
     System.out.println();
   }
@@ -99,12 +99,12 @@ public class DBTest {
     try {
       System.out.println("포로그램 전체데이터를 읽어오는 중...");
       System.out.println();
-      Thread.sleep(3000);
+      // Thread.sleep(3000);
 
       msg = "select * from test"; // 문자열을 명령어로 인식해서 실행하도록 Statement
       RS =  ST.executeQuery(msg);
 
-      System.out.println("코드\t이름\t제목\t날짜\t조회수");
+      System.out.println("코드 \t 이름 \t 제목 \t 날짜 \t 조회수");
       while (RS.next() == true) {
         // 필드접근해서 데이터 가져올 때 getXXX()가 필요
         int ucode =  RS.getInt("code");
@@ -124,8 +124,10 @@ public class DBTest {
     try {
       System.out.print("보고자 하는 코드 입력>>> ");
       String view = keyScan.nextLine();
-      msg = "select * from test where code = " + "'" + view + "'";
-      RS = ST.executeQuery(msg);
+      msg = "select * from test where code = ?";
+      PST = CN.prepareStatement(msg);
+      PST.setString(1, view);
+      RS = PST.executeQuery();
 
       System.out.println("코드\t이름\t제목\t날짜\t조회수");
       while (RS.next() == true) {
@@ -150,12 +152,16 @@ public class DBTest {
       System.out.print("수정 title 입력>>> ");
       String uTitle = keyScan.nextLine();
 
-      msg = "update test set name  = '" + uName +"', title = '"+ uTitle +"'"
-          + " where code = " + "'" + update + "'";
+      msg = "update test set name  = ?, title = ?, wdate = sysdate where code = ?";
+      PST = CN.prepareStatement(msg);
+      PST.setString(1, uName);
+      PST.setString(2, uTitle);
+      PST.setString(3, update);
+
       System.out.println(msg);
       //ST = CN.createStatement();
 
-      int condition = ST.executeUpdate(msg); // 진짜 수정하기 위한 코드
+      int condition = PST.executeUpdate(); // 진짜 수정하기 위한 코드
       if (condition > 0) {
         System.out.printf("%s 데이터 수정 성공\n", update);
         dbSelectAll();
@@ -168,9 +174,12 @@ public class DBTest {
     try {
       System.out.print("삭제할 코드 입력>>> ");
       String del = keyScan.nextLine();
-      msg = "delete from test where code = " + "'" + del + "'";
+      msg = "delete from test where code = ?";
+      PST = CN.prepareStatement(msg);
+      PST.setString(1, del);
+
       System.out.println(msg);
-      int condition = ST.executeUpdate(msg);
+      int condition = PST.executeUpdate();
       if (condition > 0) {
         System.out.printf("%s 데이터 삭제 성공\n", del);
       } else { System.out.printf("%s 데이터 삭제 실패\n",del);
