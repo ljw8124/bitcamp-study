@@ -35,8 +35,7 @@ public class Board {
 
   public Board() { // 생성자로 이용하면 더 간단해질 수 있음
     try {
-      Class.forName("oracl"
-          + "e.jdbc.driver.OracleDriver");
+      Class.forName("oracle.jdbc.driver.OracleDriver");
       String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
       CN = DriverManager.getConnection(url, "system", "1234"); 
       ST =  CN.createStatement(); // 첫번째. 명령어 생성

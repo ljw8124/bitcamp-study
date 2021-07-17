@@ -1,63 +1,125 @@
 package com.joung.project;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Scanner;
 
-public class Board {
-  Connection CN = null;
-  Statement ST = null;
-  ResultSet RS = null;
-  String msg = "isud = crud 쿼리문 기술";
+public class Board extends DB{
   static Scanner keyScan = new Scanner(System.in);
-  static String id = "아이디 입력";
-  static String pw = "패스워드 입력";
 
-  // 로그인 시스템
-  // 게시물 출력 -> 선택 페이스
-  // 상세 출력
+  public void board() {
 
-  public static void main(String[] args) {
-    Board board = new Board();
-
-    System.out.println("[게시판에 오신 것을 환영합니다.]");
-    board.boardList();
+    Appointment appointment = new Appointment();
+    BoardHandler boardHandler = new BoardHandler();
+    DB db = new DB();
+    db.DBbase();
+    System.out.println("\"-----------------------------------[자유 게시판]---------------------------------------");
+    boardHandler.viewBoard("freeboard");
+    System.out.println("-----------------------------------------------------------------------------------------");
+    System.out.println("-----------------------------------[질문답변 게시판]-------------------------------------");
+    boardHandler.viewBoard("board");
+    System.out.println("-----------------------------------------------------------------------------------------");
+    System.out.println("-----------------------------------[수업진도 게시판]-------------------------------------");
+    boardHandler.viewBoard("review");
+    System.out.println("-----------------------------------------------------------------------------------------");
+    System.out.println("----------------------------------[스터디모집 게시판]------------------------------------");
+    appointment.viewAppointment();
+    System.out.println("-----------------------------------------------------------------------------------------");
     System.out.println();
 
-    System.out.println("      Login");
-    System.out.print("아이디 : ");
-    id = keyScan.nextLine();
-    System.out.print("비밀번호 : ");
-    pw = keyScan.nextLine();
+    System.out.println("[게시판 목록] : freeBoard/ board/ review/ appointment");
+    System.out.println("[단축어] : [f]-freeBoard [b]-board [r]-review [a]-appointment");
+    System.out.print("입장할 게시판을 입력해주세요 : ");
+    String input = keyScan.nextLine();
 
-    if (id.equals("admin") && pw.equals("admin")) {
-      board.admin();
-    } else {
-      board.member();
+    try {
+      if (input.equals("a")) {
+        input = "appointment";
+
+        appointment.viewAppointment();
+        loop: while (true) {
+          System.out.println("1.게시판 조회");
+          System.out.println("2.게시글 작성");
+          System.out.println("3.게시글 수정");
+          System.out.println("4.게시글 삭제");
+          System.out.println("5. 뒤로 가기");
+          System.out.print("입력 : ");
+          int select = keyScan.nextInt();
+
+          switch (select) {
+            case 1: appointment.viewAppointment(); break;
+            case 2: appointment.insertAppointment(); break;
+            case 3: appointment.updateBoard(); break;
+            case 4: appointment.deleteBoard(); break;
+            //case 5: boardHandler.search(input); break;
+            //case 3: boardHandler.updateBoard(); break;
+            //case 5: boardHandler.search(); break;
+            case 5: break loop;
+          }
+        }
+      } else {
+        if (input.equals("f")) {
+          input = "freeBoard";
+          boardList(input);
+        } else if (input.equals("b")) {
+          input = "board";
+          boardList(input);
+        } else if (input.equals("r")) {
+          input = "review";
+          boardList(input);
+        }
+      }
+    } catch(Exception ex) {
+      System.out.println("존재하지 않는 게시판입니다.");
     }
-
   }
 
+  public void boardList(String input) {
+
+    Appointment appointment = new Appointment();
+    BoardHandler boardHandler = new BoardHandler();
+    DB db = new DB();
+    db.DBbase();
+
+    boardHandler.viewBoard(input);
+    loop: while (true) {
+      System.out.println("1.게시판 조회");
+      System.out.println("2.게시글 작성");
+      System.out.println("3.게시글 수정");
+      System.out.println("4.게시글 삭제");
+      System.out.println("5.게시글 검색");
+      System.out.println("6.뒤로 가기");
+      System.out.print("입력 : ");
+      int select  = keyScan.nextInt();
+
+      switch (select) {
+        case 1: boardHandler.viewReply(input); break;
+        case 2: boardHandler.insertBoard(input); break;
+        case 3: boardHandler.updateBoard(input); break;
+        case 4: boardHandler.deleteBoard(input); break;
+        case 5: boardHandler.search(input); break;
+        case 6: break loop;
+      }
+    }
+  }
+}
+/*
   void boardList() {
     System.out.println("\t[게시판 목록]");
-    System.out.println("1. 공지사항");
-    System.out.println("2. QnA 게시판");
-    System.out.println("3. 자유 게시판");
+    System.out.println("1. QnA 게시판");
+    System.out.println("2. 자유 게시판");
+    System.out.println("3. 수업진도 게시판");
     System.out.println("4. 스터디 게시판");
     System.out.print("입력 : ");
     String input = keyScan.nextLine();
 
     switch (input) {
       case "1":
-        System.out.println("공지사항");
-        break;
-      case "2":
         System.out.println("QnA 게시판");
         break;
-      case "3":
+      case "2":
         System.out.println("자유 게시판");
+        break;
+      case "3":
+        System.out.println("수업진도 게시판");
         break;
       case "4":
         System.out.println("스터디 게시판");
@@ -67,134 +129,7 @@ public class Board {
     }
 
   }
+ */
 
 
-  public Board() { // 생성자로 만들어 무조건 실행하도록 설정
-    try {
-      Class.forName("oracle.jdbc.driver.OracleDriver");
-      String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
-      CN = DriverManager.getConnection(url, "system", "1234"); 
-      ST =  CN.createStatement(); // 첫번째. 명령어 생성
-      System.out.println("오라클 DB 연결 성공");
-    } catch(Exception ex) {
-      System.out.println("오라클 DB 연결 실패");
-    }
-  }
 
-  void selectAll() {
-    System.out.println("게시판 조회");
-    System.out.println();
-  }
-
-  void insertBoard() {
-    System.out.println("게시글 추가");
-    System.out.println();
-  }
-
-  void deleteBoard() {
-    System.out.println("게시글 삭제");
-    System.out.println();
-  }
-
-  void updateBoard() {
-    System.out.println("게시글 수정");
-    System.out.println();
-  }
-
-  void deleteMember() {
-    System.out.println("회원 삭제");
-    System.out.println();
-  }
-
-  void admin() {
-    try {
-      loop : while (true) {
-        if (id.equals("admin") && pw.equals("admin")) {
-          System.out.println("관리자 모드로 실행합니다");
-          System.out.println("\t[menu]");
-          System.out.println("1. 게시판 조회");
-          System.out.println("2. 게시글 추가");
-          System.out.println("3. 게시글 삭제");
-          System.out.println("4. 게시글 수정");
-          System.out.println("5. 회원 삭제");
-          System.out.println("종료를 원한다면 quit");
-          System.out.print("입력 : ");
-          String input = keyScan.nextLine();
-
-          switch (input) {
-            case "1":
-            case "게시판 조회":
-              selectAll();
-              break;
-            case "2":
-            case "게시글 추가":
-              insertBoard();
-              break;
-            case "3":
-            case "게시글 삭제":
-              deleteBoard();
-              break;
-            case "4":
-            case "게시글 수정":
-              updateBoard();
-              break;
-            case "5":
-            case "회원 삭제":
-              deleteMember();
-              break;
-            case "quit":
-              break loop;
-            default:
-              System.out.println("잘못 입력하였습니다.");
-          }
-
-        }
-      }
-    } catch(Exception ex) { }
-  }
-
-  void connector() {
-    if (id.equals("admin")) {
-      admin();
-    } else {
-      member();
-    }
-  }
-
-  void member() {
-    try {
-      loop : while (true) {
-        if (id.equals("member")) { // 데이터베이스의 아이디,패스워드와 비교
-          System.out.printf("%s 님 환영합니다\n", id);
-          System.out.println("\t[menu]");
-          System.out.println("1. 게시판 조회");
-          System.out.println("2. 게시글 추가");
-          System.out.println("3. 게시글 수정");
-          System.out.println("종료를 원한다면 quit");
-          System.out.print("입력 : ");
-          String input = keyScan.nextLine();
-
-          switch (input) {
-            case "1":
-            case "게시판 조회":
-              selectAll();
-              break;
-            case "2":
-            case "게시글 추가":
-              insertBoard();
-              break;
-            case "3":
-            case "게시글 수정":
-              updateBoard();
-              break;
-            case "quit":
-              break loop;
-            default:
-              System.out.println("잘못 입력하였습니다.");
-          }
-
-        }
-      }
-    } catch(Exception ex) { }
-  }
-}

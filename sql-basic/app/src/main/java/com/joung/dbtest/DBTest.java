@@ -11,8 +11,11 @@ public class DBTest {
 
   Connection CN = null; // DB서버연결정보
   Statement ST = null; // 명령어 생성
+
   ResultSet RS = null; // 조회결과를 기억, select 조회결과값 전체데이터를 기억
+
   PreparedStatement PST = null;
+
   String msg = "isud = crud 쿼리문 기술";
   int Gtotal = 0; // 전체 개수와 조회 개수 비교
 
