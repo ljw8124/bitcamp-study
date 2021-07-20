@@ -14,7 +14,7 @@ public class Board extends DB{
     System.out.println("\"-----------------------------------[자유 게시판]---------------------------------------");
     boardHandler.viewBoard("freeboard");
     System.out.println("-----------------------------------------------------------------------------------------");
-    System.out.println("-----------------------------------[질문답변 게시판]-------------------------------------");
+    System.out.println("-----------------------------------[장비자랑 게시판]--------------------------------------");
     boardHandler.viewBoard("board");
     System.out.println("-----------------------------------------------------------------------------------------");
     System.out.println("-----------------------------------[수업진도 게시판]-------------------------------------");
@@ -47,8 +47,8 @@ public class Board extends DB{
           switch (select) {
             case 1: appointment.viewAppointment(); break;
             case 2: appointment.insertAppointment(); break;
-            case 3: appointment.updateBoard(); break;
-            case 4: appointment.deleteBoard(); break;
+            case 3: appointment.updateAppointment(); break;
+            case 4: appointment.deleteAppoinment(); break;
             //case 5: boardHandler.search(input); break;
             //case 3: boardHandler.updateBoard(); break;
             //case 5: boardHandler.search(); break;

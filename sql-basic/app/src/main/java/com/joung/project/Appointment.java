@@ -15,8 +15,8 @@ public class Appointment extends MemberHandler{ // 스터디 약속
       //      System.out.println(msg);
 
       // 자바의 정석 39p 참고
-      System.out.printf("%5s %10s %10s %10s %10s %10s %4s %4s%n"
-          , "번호", "제목", "장소", "시간","날짜", "ID","정원", "조회수");
+      System.out.printf("%5s %10s %10s %10s %10s %10s %4s%n"
+          , "번호", "제목", "장소", "시간","날짜", "ID","정원");
       System.out.println();
       while(RS.next() == true) {
         int num = RS.getInt("num");
@@ -26,10 +26,9 @@ public class Appointment extends MemberHandler{ // 스터디 약속
         Date date  = RS.getDate("written");
         String id = RS.getString("id");
         int numLimit = RS.getInt("numlimit");
-        int viewCount = RS.getInt("viewcount");
         //System.out.printf(id + "\t" + grade +  "\t" + name+ "\t" + email+ "\t" + mobile+ "\t" + date+ "\t" + recommended+ "\t" + belongs);
-        System.out.printf("%5s %10s %10s %10s %10s %10s %4s %4s%n"
-            , num, title, location, time, date, id, numLimit, viewCount);
+        System.out.printf("%5s %10s %10s %10s %10s %10s %4s%n"
+            , num, title, location, time, date, id, numLimit);
       }
     } catch(Exception ex) {
       System.out.println("잘못 입력입니다.");
@@ -166,21 +165,21 @@ public class Appointment extends MemberHandler{ // 스터디 약속
 
         if (architecture != 0) {
           System.out.printf("%s ■","프로젝트매니저");
-        } else if (architecture == 0) {
+        } else if (architecture == 0) 
           System.out.printf("%s □","프로젝트매니저");
-        } if (documentize != 0) {
-          System.out.printf("%30s ■","문서화책임자");
-        } else if (documentize == 0) {
-          System.out.printf("%30s □","문서화책임자");
-        } if (coder1 != 0) {
-          System.out.printf("%30s ■","무지성개발자");
-        } else if (coder1 == 0) {
-          System.out.printf("%30s □","무지성개발자");
-        } if (coder2 != 0) {
-          System.out.printf("%30s ■","지성개발자\n");
-        } else if (coder2 == 0) {
-          System.out.printf("%30s □","지성개발자\n");
-        }
+        //        } if (documentize != 0) {
+        //          System.out.printf("%30s ■","문서화책임자");
+        //        } else if (documentize == 0) {
+        //          System.out.printf("%30s □","문서화책임자");
+        //        } if (coder1 != 0) {
+        //          System.out.printf("%30s ■","무지성개발자");
+        //        } else if (coder1 == 0) {
+        //          System.out.printf("%30s □","무지성개발자");
+        //        } if (coder2 != 0) {
+        //          System.out.printf("%30s ■","지성개발자\n");
+        //        } else if (coder2 == 0) {
+        //          System.out.printf("%30s □","지성개발자\n");
+        //        }
 
         //■ □
         // sql 문으로 assign 비교 적용
@@ -191,13 +190,15 @@ public class Appointment extends MemberHandler{ // 스터디 약속
         PST.setInt(1, compare);
         PST.setString(2, compareMsg);
 
-        int assign = 0;
+        int assign = 0; // 총원
+
         if(assign != 0) {
           System.out.println("해당 포지션은 마감되었습니다.");
+          break;
         } else {
           System.out.println("참가완료되었습니다.");
+          break;
         }
-        System.out.println();
       }
     } catch(Exception e) { }
 
