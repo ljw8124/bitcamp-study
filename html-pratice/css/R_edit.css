@@ -1,0 +1,55 @@
+
+body{
+	margin:0px;
+}
+
+*{
+  font-size: 16pt;
+  font-family: "Comic Sans MS";
+}
+
+.tab1{
+	width: 100%;
+	border-top: 2px solid #369;
+	border-bottom: 2px solid #369 ;
+	border-spacing:10px;
+}
+
+.td1{
+	width:30%;
+}
+
+.td2{
+	width:70%;
+}
+
+.td3{
+	text-align: center;
+}
+
+span{
+	font-size: 20pt;
+	font-weight: bold;
+	text-align: center;
+	font-family:  "Comic Sans MS";
+	background-color:#369;
+	color: #FFFFFF;
+	width:300px;
+	display:inline-block;
+}
+
+label{
+	font-weight: bold;
+	font-size:14pt;
+}
+
+textarea {
+	width: 270px;
+	height: 200px;
+}
+
+input[type=button]{
+	font-weight: bold;
+	font-size: 14pt;
+}
+

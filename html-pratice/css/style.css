@@ -1,0 +1,68 @@
+
+*{ 
+    font-family: 맑은 고딕; 
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 2px;  
+  }
+
+ 
+
+  /* 메뉴 구성 시작 1*/
+  nav{ margin-bottom: 25px; }
+
+  
+  /* 메뉴 구성 시작 2, 태그의 id 가 topMenu인 스타일*/  
+  #topMenu{
+    height: 40px;
+    width: 100%;
+    background-color: #21517B;
+  }
+  
+  #topMenu ul li{
+    list-style: none;     /* 블렛 기호 제거  list-style: none;   */
+    color: white;         /* 글자 #555555 색갈*/
+    background-color:  #21517B;
+    float: left;      /* float: left;  li 태그의 출력 방향을 좌측으로 변경 */
+    line-height: 30px; /* 하나의 행 높이 */
+    vertical-align: middle; /* 세로 기준 중간 정렬 */
+    text-align: center;      /* 가로 기준 정렬 */
+  }
+  
+   
+  #topMenu .menuLink{   /* A 태그 속성 적용 */
+    text-decoration: none;  /* 밑줄 제거 */
+    color: white;   
+    display: block;   /* A 관련 영역 전부 링크 설정 */
+    width: 150px;
+    font-weight: bold;
+    font-family:  Segoe UI Symbol , comic Sans MS ; 
+    font-size: 16pt;
+  }
+  
+  #topMenu .menuLink:hover {  /* A 태그에 마우스 over 속성 적용 */
+    color: #10385A;
+    background-color: #C0DEF9;
+    font-size: 18pt;
+  }
+  
+  
+
+ #bottom{ 
+    font-family: Comic Sans MS; 
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5%;
+    padding: 2px;  
+  }
+
+
+#table{
+    margin: 0px auto;  /* 가운데 정렬 */
+    border-style: solid; /*  실선 */
+    border-width: 5px; /* 선 두께 */
+    border-color: #999999; /* 선 색깔 */
+    border-collapse: collapse; /* 셀 경계선 병합*/
+}
+ 

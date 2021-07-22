@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mark14</title>
+    <!-- CSS에서는 _(언더바)를 사용하지 않고 -(하이픈)을 이용한다-->
+    <style>
+        * {font-size: 16pt;}
+        a {
+            font-size: 18pt; 
+            text-decoration: none;
+            color :rgb(7, 104, 56);
+        }
+        a:hover { 
+            font-size: 32pt;
+            text-decoration: none;
+            color :rgb(49, 16, 236);
+            font-family:fantasy;
+        }
+        .my1:hover{
+            color:white;
+        }
+        #bc1 {font-size: 26pt; background-color: teal; border: 3px solid blue;}
+        #bc2 {background-color: thistle;}
+        #bc3 {font-size: 22pt; color: coral; background-color: wheat;}
+
+        .my1 {background-color: yellowgreen;}
+        .my2 {background-color: aquamarine;}
+        .my3 {font-size: 22pt; color: coral; background-color: cadetblue;}
+    </style>
+</head>
+<body>
+    <div id="bc1">12345678</div>
+    <div id="bc2">abcd</div>
+    <div id="bc3">가나다</div>
+
+    <p></p>
+    <span class="my1">야아아아아아아</span> <br>
+    <span class="my2">abcd</span> <br>
+    <span class="my3">가나다</span> <br>
+    <!-- class를 많이씀 -> 그말은 스타일 설정을 많이 한다는 것을 의미함 -->
+    
+
+    <hr>
+       <!-- id는 #으로 접근 class는 .으로 접근 -->
+       <!-- div(왼쪽에서 오른쪽끝까지 라인개행-> 엔터기능),span(글자영역만큼/라인개행 없음-> 띄어쓰기만 적용) 을 많이 사용 -->
+    <p></p>
+    <div style="background-color: orange;">12345678</div>
+    <div style="background-color: yellow;">abcd</div>
+    <div style="background-color: violet;">가나다</div>
+
+    <p></p>
+    <span style="background-color: orange;">12345678</span> <br>
+    <span style="background-color: yellow;">abcd</span> <br>
+    <span style="background-color: violet;">가나다</span> <br>
+</body>
+</html>

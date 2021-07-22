@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        * {
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-top: 15pt;
+            margin-left: pt;
+          }
+          a {
+            font-size: 12pt;
+            text-decoration: none;
+            color :rgb(40, 161, 131);
+          }
+          a:hover {
+            font-size: 12pt;
+            text-decoration: none;
+            color: rgb(19, 23, 226);
+          }
+    </style>
+</head>
+<body>
+    <table border="1" width="1200" cellspacing="0" cellpadding="10">
+        <caption> <b> <font color="tomato" size=6> 미세먼지 농도에 따른 행동요령 </font> </b> </caption>
+        <tr height="50">
+            <th colspan="2">예보구간</th>
+            <th bgcolor="#9cffff">좋음😇</th>
+            <th bgcolor="#c7ff6f">보통🙂</th>
+            <th bgcolor="#fffa4e">약간나쁨😑</th>
+            <th bgcolor="#ffc943">나쁨😟</th>
+            <th colspan="2" bgcolor="#ff3a0d"><font color="white">매우나쁨👿</font></th>
+        </tr>
+        <tr align="center" height="50">
+            <td colspan="2">예측농도</td>
+            <td>0~30</td>
+            <td>31~80</td>
+            <td>81~120</td>
+            <td>121~200</td>
+            <td >201~300</td>
+            <td>301~</td>
+        </tr>
+        <tr align="center" height="50">
+            <td rowspan="2">행동요령</td>
+            <td>노약자</td>
+            <td></td>
+            <td></td>
+            <td>장시간 실외 활동 가급적 자제</td>
+            <td>
+                무리한 실외활동 자제요청<br>
+                ※특히 호흡기·심질환자,노약자
+            </td>
+            <td>실외활동 제한</td>
+            <td>실내생활 권고</td>
+        </tr>
+        <tr align="center" height="50">
+            <td>일반인</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>장시간 무리한 실외활동 자제</td>
+            <td>실외활동 자제</td>
+            <td>실외활동 자제</td>
+        </tr>
+        <tr>
+            
+            <td colspan="8" style="text-align: right;">출처: 네이버날씨 <a href="https://weather.naver.com/air/02670350">[현재미세먼지 농도 확인]</a></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

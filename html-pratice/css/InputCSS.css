@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+body {
+	margin: 50px;
+}
+
+
+.all {
+	font-family: "나눔스퀘어라운드";
+}
+
+.title {
+	font-size: xx-large;
+	background-color: #369;
+	color: #FFFFFF;
+	height: 100px;
+}
+
+.cf {
+	margin-left: 20px;
+	text-align: left;
+	font-size: 8pt;
+}
+
+.table1 {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-top: 1px solid #ccc;
+	border-left: 3px solid #369;
+	margin: 20px 10px;
+}
+
+.table1 th {
+	width: 20%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	color: #153d73;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-color: #F2F2F2;
+}
+
+.table1 td {
+	width: 80%;
+	padding: 10px;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 10pt;
+}
