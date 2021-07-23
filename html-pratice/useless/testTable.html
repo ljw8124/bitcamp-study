@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        * {font-size: 14pt;}
+    </style>
+        <Script>
+            function welcome() {
+              //  alert("저희 홈페이지 방문을 환영합니다.");
+                console.log("무야호 방문을 환영합니다.");
+                console.log("결과 = " +(2099*6));
+            }
+            function changeColor(color) {
+                document.body.style.background = color;
+            }
+            function colorChange() {
+                var color = ["black" , "white"]
+                var num = Math.floor(Math.random() * color.length);
+                var bodyTag = document.getElementById("colorCont");
+                document.body.style.backgroundColor = color[num]
+            }
+        </Script>
+
+</head>
+<body onload="welcome();">
+    <p></p><br>
+    <table border="1" width="900" cellspacing="0">
+        <caption><b> 비트캠프 강의 </b></caption>
+        <tr bgcolor="#90a0aa"> <!-- th는 table header = 중앙맞춤,글씨 진하게-->
+            <th>강의시간</th>
+            <th>강의과목</th>
+            <th>강사명</th>
+            <th>강의실</th>
+            <th>기타비고</th>
+        </tr>
+        <tr>
+            <td>오전 10:00</td>
+            <td>스프링</td>
+            <td>이승엽</td>
+            <td>종로 702</td>
+            <td rowspan="4" align="center">
+                📢안내데스크 문의 <br>
+                📞전화문의 <br>
+                ✉이메일 문의 <br>
+                🤦‍♀️나문희
+            </td>
+        </tr>
+        <tr onmouseover="style.backgroundColor='#00ffff'" onmouseout="style.backgroundColor=''">
+            <td>오전 12:00</td>
+            <td>jQuery</td>
+            <td>박찬호</td>
+            <td>서초 506</td>
+        </tr>
+        <tr onmouseover="style.backgroundColor='#00ffff'" onmouseout="style.backgroundColor=''">
+            <td>오전 09:00</td>
+            <td>JavaScript</td>
+            <td>류현진</td>
+            <td>신촌 201</td>
+        </tr>
+        <tr onmouseover="style.backgroundColor='#00ffff'" onmouseout="style.backgroundColor=''">
+            <td>오전 09:00</td>
+            <td>JavaScript</td>
+            <td>김광현</td>
+            <td>신촌 201</td>
+        </tr>
+    </table>
+    <p></p>
+    <!-- 태그 style 기술할떄 this키워드 생략 가능 -->
+    <button onclick="changeColor('black')">dark</button>
+    <button onclick="changeColor('white')">white</button>
+    <button id="colorCont" onclick="colorChange()">press</button>
+
+</body>
+</html>

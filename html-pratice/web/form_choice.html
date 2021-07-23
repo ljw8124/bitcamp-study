@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="http://localhost/order.php">
+        <p>
+            <!--
+            radio 버튼 사용법 radio는 버튼을 누르는 것
+            또 같은 이름 끼리는 중첩선택이 불가하다
+            -->
+            <h1>색상(단일선택))</h1>
+            붉은색 :<input type="radio" name="color" value="red">
+            검은색 :<input type="radio" name="color" value="black">
+            파란색 :<input type="radio" name="color" value="blue">
+        </p>
+        <p>
+            <!--
+                checkbox는 다중선택을 할때 사용함
+            -->
+            <h1>사이즈(다중선택)</h1>
+           95 :<input type="checkbox" name="size" value="95">
+           100 :<input type="checkbox" name="size" value ="100" checked> <!-- 기본적으로 선택되어있음을 원하면 checked 사용 -->
+           105 :<input type="checkbox" name="size" value="105">
+       </p>
+       <input type="submit">
+       </form>
+    </body>
+</html>
