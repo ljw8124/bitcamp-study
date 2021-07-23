@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form2</title>
+    <style>
+        * {
+            font-size: 20pt;
+            margin-top: 15pt;
+            margin-left: 3pt;
+        }
+    </style>
+
+    <script>
+        function nullCheck() {
+            a = document.myForm.code.value;
+            b = document.myForm.title.value;
+            size = document.myForm.code.value.length
+            if (a == "" || a == null) {
+                alert("code값을 입력하세요.");
+                return false; // 이 때 false는 안써도 된다
+            } else if (size > 6) {
+                alert("6자리까지만 입력하실 수 있습니다.")
+                myForm.code.value="";
+                myForm.code.focus();
+            } else if (input.type != 'number') {
+                alert("숫자만 입력할 수 있습니다.")
+                myForm.title.focus();
+            }
+
+            //size = document.myForm.code.value.length
+            //alert("문자길이는 " + size)
+
+            if (b == "" || b == null) {
+                alert("제목을 입력하세요.");
+                myForm.title.focus();
+            } else { }
+        }
+    </script>
+</head>
+<body bgcolor="lightgrey">
+    <font face="궁서체"><b> 무야호 입력해랏 </b></font><br>
+    
+    <form name="myForm"> <!--- action은 서버에서 실행될 문서를 던저줌 -->
+        <!-- input은 자바에서의 scanner의 역할 -->
+        
+        코드 : <input type="number" numberonly name="code" size="10" min="0" pattern="\d*"> <font color=red>*</font> 필수 입력 항목입니다. <br><!-- maxlength는 최대 길이를 제한 -->
+        제목 : <input type="text" name="title" size="10" value="summer"> <font color=red>*</font> 필수 입력 항목입니다. <br><!-- value는 기본값을 의미,입력하지 않아도 텍스트가 들어가있음 -->
+        <input type="button" value="저 장" onclick="nullCheck();">
+        <input type="reset" value="취 소">
+    </form>
+    </pre>  
+</body>
+</html>

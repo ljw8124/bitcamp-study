@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testForm</title>
+    <style>
+        * {
+            font-size: 20pt;
+            margin-top: 15pt;
+            margin-left: 3pt;
+        }
+       
+    </style>
+
+    <script>
+        function nullCheck() {
+            alert("처음으로 만드는 자바스크립트")  // alert은 출력문이라고 보면됨.
+            // 자바스크립트는 절대로 타입형을 기술하지 않는다.
+            // html에서는 if,반복문,연산처리기술해도 문장으로만 출력됨, 따라서 jsp에서 기술해야함.
+            // function 이름(인자값) {   <- 리턴값이 없어도 void 기술x
+            //      if,반복문,연산처리기술
+            // }
+            su = 24;
+            msg = "안내문";
+            avg = 78.9;
+        }
+    </script>
+</head>
+<body bgcolor="lightgrey">
+    <font face="궁서체"><b> 무야호 입력해랏 </b></font><br>
+    
+    <form action=""> <!--- action은 서버에서 실행될 문서를 던저줌 -->
+        <!-- input은 자바에서의 scanner의 역할 -->
+        코드 : <input type="text" name="code" id="code" maxlength="10"> <br> <!-- maxlength는 최대 길이를 제한 -->
+        제목 : <input type="text" name="title" id="title" value="Sunday"> <br> <!-- value는 기본값을 의미,입력하지 않아도 텍스트가 들어가있음 -->
+        <input type="button" value="저 장">
+        <input type="reset" value="취 소">
+    </form>
+
+    <img src="aaa.gif" alt=""> <p></p>
+    <pre>
+    오늘은 목요일 아침.
+    내일은 금요일
+    </pre>  
+</body>
+</html>
