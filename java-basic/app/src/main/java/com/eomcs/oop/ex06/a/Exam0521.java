@@ -9,7 +9,8 @@ public class Exam0521 {
         new Car("비트자동차", 5, 1980, 16), 
         new Bike("캠프모터", 5, true), 
         new Sedan("현대자동차", 5, 1980, 16, true, true), 
-        new Truck("기아자동차", 5, 10000, 32, 15f, true)};
+        new Truck("기아자동차", 5, 10000, 32, 15f, true)
+    };
 
     for (int i = 0; i < arr.length; i++) {
       printCar(arr[i]);

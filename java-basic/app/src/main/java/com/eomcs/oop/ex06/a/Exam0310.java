@@ -16,6 +16,7 @@ public class Exam0310 {
     // 형변환(type casting)으로 컴파일러를 속일 수는 있지만,
     // 실행할 때 오류가 발생할 것이다.
     // => 속이지 말라!
+    // => 문법적으로는 오류가 아니나 Car에서는 sunroof와 auto 변수가 없다.
     Sedan s = (Sedan) c; // 실행할 때 오류 발생! (runtime exception)
     s.sunroof = true;
     s.auto = true;

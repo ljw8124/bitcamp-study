@@ -39,7 +39,7 @@ public class Exam0510 {
     System.out.println("-----------------------------");
 
     // 형변환 클래스에 존재하지 않는 필드는 가리킬 수 없다.
-    //    System.out.println(((A)obj1).age); // 컴파일 오류!
+    //    System.out.println(((A)obj1).age); // 컴파일 오류! age가 없다
     System.out.println(((A)obj1).working);
   }
 }

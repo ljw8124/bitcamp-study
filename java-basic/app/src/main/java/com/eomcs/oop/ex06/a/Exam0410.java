@@ -5,7 +5,7 @@ public class Exam0410 {
 
   // Sedan과 Truck의 모델명과 cc를 출력하라!
 
-  public static void printSedan(Sedan sedan) {
+  public static void printSedan(Sedan sedan) { // 이 메서드는 Sedan의 값만 출력 가능
     System.out.printf("모델명: %s\n", sedan.model);
     System.out.printf("cc: %d\n", sedan.cc);
     System.out.println("-------------------------");
@@ -20,7 +20,7 @@ public class Exam0410 {
     truck.model = "타이탄II";
     truck.cc = 10000;
 
-    printSedan(sedan);
+    printSedan(sedan); // Sedan에만 접근할 수 있기 때문에 Truck은 접근 불가능
 
     // printSedan()의 파라미터는 Sedan 객체의 주소만 받을 수 있다.
     // 그래서 Truck 객체를 전달할 수 없다.

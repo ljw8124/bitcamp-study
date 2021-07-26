@@ -14,7 +14,9 @@ public class Exam0311 {
     // 컴파일러는 그러거니 하고 그냥 통과시켜준다.
     // 문제는 실행할 때 들통난다!
     Sedan s = (Sedan)v1; // JVM이 형변환을 처리할 때 진짜 Sedan 객체가 맞는지
-    // 검사한다. 따라서 실행 오류 발생!
+    // 검사한다. 따라서 실행 오류 발생! 
+    // Sedan에 든 변수가 Vehicle에는 없기 때문에
+
     s.cc = 1980;
     s.valve = 16;
     s.sunroof = true;

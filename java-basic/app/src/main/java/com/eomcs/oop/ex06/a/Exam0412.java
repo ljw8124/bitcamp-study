@@ -27,6 +27,7 @@ public class Exam0412 {
 
     // 또다른 해결책?
     // Sedan과 Truck을 모두 처리하는 메서드를 만들어 사용하라!
+    // 공통되는 부분을 Car로 묶어서 사용
     printCar(sedan); // OK! 왜? Sedan은 Car의 일종이다.
     printCar(truck); // OK! 왜? Truck도 Car의 서브클래스이다.
 

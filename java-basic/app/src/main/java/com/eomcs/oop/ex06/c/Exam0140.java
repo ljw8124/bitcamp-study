@@ -34,8 +34,8 @@ public class Exam0140 {
       System.out.println("A4.print():");
       System.out.printf("  => this.name(%s)\n", this.name);
       System.out.printf("  => this.tel(%s)\n", this.tel);
-      System.out.printf("  => this.working(%s)\n", this.working);
-      System.out.printf("  => super.working(%b)\n", super.working);
+      System.out.printf("  => this.working(%s)\n", this.working); // 필드 오버라이딩으로 재정의
+      System.out.printf("  => super.working(%b)\n", super.working); // 부모 클래스에서 호출
     }
   }
 

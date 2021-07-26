@@ -35,7 +35,7 @@ public class Exam0430 {
       System.out.printf("  => this.working(%s), super.working(%s)\n",
           this.working, super.working);
       System.out.printf("  => this.age(%s), super.age(컴파일 오류!) \n",
-          this.age /*, super.age*/);
+          this.age /*, super.age*/); // age는 A2 클래스에서 재정의 된 것이므로
     }
   }
 

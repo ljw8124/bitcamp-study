@@ -27,13 +27,13 @@ public class Exam0410 {
       // => 수퍼 클래스에서 메서드를 찾아 호출한다.
       // => 수퍼 클래스에 없으면 그 상위 클래스로 따라 올라간다.
       // => 오버라이딩 하기 전의 메서드를 호출하고 싶을 때 유용하다.
-      super.m();
+      super.m(); // super는 말그대로 수퍼클래스로 접근
     }
-  }
 
-  public static void main(String[] args) {
-    A2 obj = new A2();
-    obj.test();
+    public static void main(String[] args) {
+      A2 obj = new A2();
+      obj.test();
+    }
   }
 }
 

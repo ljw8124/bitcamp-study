@@ -6,14 +6,14 @@ public class Exam0310 {
 
   //멤버의 접근 범위
   //private      : 같은 클래스
-  //(default)    : 같은 클래스 + 같은 패키지
+  //(default)    : 같은 클래스 + 같은 패키지 -> 아무것도 안 쓴 경우
   //protected    : 같은 클래스 + 같은 패키지 + 서브 클래스
   //public       : 모두
   //
 
   static class C {
     //private 접근 범위:
-    //=> 현재 클래스
+    //=> 현재 클래스 C에서만 사용 가능
     private void m1() {}
 
     //(default) 접근 범위:
@@ -21,7 +21,7 @@ public class Exam0310 {
     void m2() {}
 
     //protected 접근 범위:
-    //=> 현재 클래스 + 같은 패키지 소속 클래스 + 서브 클래스
+    //=> 현재 클래스 + 같은 패키지 소속 클래스 + 서브 클래스(상속받은경우)
     protected void m3() {}
 
     //public 접근 범위:
@@ -41,6 +41,7 @@ public class Exam0310 {
 
     // 어? 강사님! @Override 빼니까 m1() 정의할 수 있는데요?
     // => 이건 오버라이딩이 아니라 C2에 새로 메서드가 추가된 것이다.
+    // => 즉 오버라이딩이 아니라 새로운 메서드 m1()을 형성한 것이다.
     // => 오버라이딩이라면 @Override 애노테이션을 붙였을 때 오류가 나지 말아야 한다!
     //
     //  private void m1() {}

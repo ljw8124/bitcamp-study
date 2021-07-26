@@ -22,7 +22,7 @@ public class C {
   public void m1(short a, String b) {} // OK
 
   // => 파라미터 이름이 다른 것으로는 메서드를 구분할 수 없다.
-  //  public void m1(float f) {} // 컴파일 오류!
+  //  public void m1(float f) {} // 컴파일 오류! -> 파라미터 타입은 같기 때문에
 
   // => 접근 범위는 상관없다.
   void m1(float a, int b) {} // OK

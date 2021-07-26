@@ -3,10 +3,10 @@ package com.eomcs.oop.ex06.c;
 
 public class Exam0330 {
   static class C {
-    private void m1() {}
-    void m2() {}
-    protected void m3() {}
-    public void m4() {}
+    private void m1() {} // class C에서만 접근가능
+    void m2() {} // 같은 클래스와 같은 패키지 내에서 접근가능
+    protected void m3() {} // 같은 클래스와 패키지,서브 클래스에서 접근가능
+    public void m4() {} // 모두 접근 가능
   }
 
   static class C4 extends C {

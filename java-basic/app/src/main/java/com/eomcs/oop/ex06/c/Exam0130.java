@@ -26,14 +26,12 @@ public class Exam0130 {
     String working = "미취업";
   }
 
-
   public static void main(String[] args) {
     A4 obj = new A4();
     obj.print(); 
     // A의 print() 호출 
     // - A4 가 오버라이딩 한 필드를 사용하지 않는다.
     // - 필드 오버라이딩은 그냥 새 필드를 추가한 것과 같다.
-
 
   }
 }

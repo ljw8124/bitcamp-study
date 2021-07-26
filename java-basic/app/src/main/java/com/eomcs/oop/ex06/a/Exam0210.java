@@ -8,15 +8,15 @@ public class Exam0210 {
     // 상위 클래스의 레퍼런스로 하위 클래스의 인스턴스를 가리킬 때
     Car c = new Sedan();
 
-    c.model = "티코"; // Vehicle의 인스턴스 변수
-    c.capacity = 5;  // Vehicle의 인스턴스 변수
-    c.cc = 890;      // Car의 인스턴스 변수
-    c.valve = 16;    // Car의 인스턴스 변수
+    c.model = "티코"; // Vehicle의 인스턴스 변수, Car에서 super를 이용하여 Vehicle 호출
+    c.capacity = 5;  // Vehicle의 인스턴스 변수, Car에서 super를 이용하여 Vehicle 호출
+    c.cc = 890;      // Car의 인스턴스 변수, 위와 달리 Vehicle에는 없는 변수
+    c.valve = 16;    // Car의 인스턴스 변수, 위와 달리 Vehicle에는 없는 변수
 
     // 레퍼런스가 실제 하위 인스턴스를 가리키고 있다 하더라도,
     // 레퍼런스 타입의 범위를 벗어나서 사용할 수 없다.
-    //    c.sunroof = true; // 컴파일 오류!
-    //    c.auto = true;    // 컴파일 오류!
+    //    c.sunroof = true; // 컴파일 오류! -> sunroof는 sedan에 정의된 변수
+    //    c.auto = true;    // 컴파일 오류! -> auto는 sedan에 정의된 변수
 
     // 왜?
     // => 자바 컴파일러는 레퍼런스가 실제 어떤 인스턴스를 가리키는지 따지지 않고
@@ -24,11 +24,11 @@ public class Exam0210 {
 
     // 해결책?
     // => 레퍼런스 변수가 실제 가리키는 것이 무엇인지 알려줘야 한다.
-    // => ((원래인스턴스타입) 레퍼런스).멤버
+    // => ((원래인스턴스타입) 레퍼런스).멤버 -> 강제형변환처럼 명시적으로 알려주어야함
     ((Sedan)c).sunroof = true; // OK!
     ((Sedan)c).auto = true;    // OK!
 
-    // => 또는 인스턴스의 원래 클래스 레퍼런스에 저장한 다음에 사용.
+    // => 또는 인스턴스의 원래 클래스 레퍼런스에 저장한 다음에 사용. -> 명시적으로 선언 후 사용
     Sedan s = (Sedan)c;
     s.sunroof = true;
     s.auto = true;
