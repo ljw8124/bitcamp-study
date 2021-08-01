@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Blog Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        div.gallery {
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 200px;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 pt-1">
+                <a class="link-secondary" href="#">Subscribe</a>
+            </div>
+            <div class="col-4 text-center">
+                <a class="blog-header-logo text-dark" href=layout.html>kukie's food</a>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="link-secondary" href="#" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                </a>
+                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 link-secondary" href="layout.html">전체 메뉴</a>
+            <a class="p-2 link-secondary" href="boardList.html">게시판 목록/읽기</a>
+            <a class="p-2 link-secondary" href="register.html">게시물 작성</a>
+            <a class="p-2 link-secondary" href="#">testModal(미구현)</a>
+        </nav>
+    </div>
+</div>
+
+<main class="container">
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic">for my puppy</h1>
+            <p class="lead my-3">강아지의, 강아지에 의한, 강아지를 위한</p>
+        </div>
+    </div>
+    <!-- 메인 화면 -->
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Best Item</strong>
+                    <h3 class="mb-0">Organic, Fresh, Delicious</h3>
+                    <div class="mb-1 text-muted">Nov 12</div>
+                    <p class="card-text mb-auto">아이들이 정말 좋아하는 오리 목뼈를 말린 간식입니다.</p>
+                    <a href="#" class="stretched-link">더보기</a> <!-- 아직구현못함 -->
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img width="200" height="250" src="img/bestseller.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Best Review</strong>
+                    <h3 class="mb-0">저희 아이가 정말 좋아해요!</h3>
+                    <div class="mb-1 text-muted">Nov 11</div>
+                    <p class="mb-auto">저희집 강아지가 항상 이것만 가지고 놀아요 너무 좋습니다 :)</p>
+                    <a href="#" class="stretched-link">더보기</a> <!-- 아직구현못함 -->
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img width="200" height="250" src="img/kukiephoto.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 여기까지 공통 레이아웃 -->
+
+    <div class="row g-5">
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                Best kukie's store menu
+            </h3>
+
+            <article class="blog-post">
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=181&cate_no=61&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202101/85f290949341ca8dd87685733bf735f4.jpg" alt="한우개꿀고구마" width="800" height="600">
+                    </a>
+                    <div class="desc">강아지 개꿀 해남 고구마 간식 100g</div>
+                </div>
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=182&cate_no=61&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202101/47055c3c6e43b8767bc37ef7e566e2af.jpg" alt="한우개껌" width="800" height="600">
+                    </a>
+                    <div class="desc">강아지 간식 한우 스틱 개껌 100g</div>
+                </div>
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=177&cate_no=61&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202011/6ff959d3ab51b74e475bc004e4a11dae.jpg" alt="유기농눈물자국사료" width="800" height="600">
+                    </a>
+                    <div class="desc">유기농 강아지 눈물자국 사료 125g</div>
+                </div>
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=129&cate_no=61&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202011/660cc42b11dc24b01c102c090423204d.jpg" alt="펫바이오틱스영양제" width="800" height="600">
+                    </a>
+                    <div class="desc">강아지 유산균 펫바이오틱스 장 영양제</div>
+                </div>
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=204&cate_no=61&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202011/8f4c6246aace3d27d6abbf2490a838e3.jpg" alt="짜르닭가슴살" width="800" height="600">
+                    </a>
+                    <div class="desc">유기농야채 간식 짜르 닭가슴살 50g</div>
+                </div>
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=198&cate_no=61&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202011/dc09ca4dbb667768b8ecf7df9e2a28bc.jpg" alt="스케링껌 14P" width="800" height="600">
+                    </a>
+                    <div class="desc">강아지 간식 개껌 스켈링껌 14p</div>
+                </div>
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=145&cate_no=62&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202011/ecee5b42ab516120b6cca6a2bd5a6824.jpg" alt="연어트릿" width="800" height="600">
+                    </a>
+                    <div class="desc">동결건조간식 연어 트릿 160g</div>
+                </div>
+
+                <div class="gallery" style="padding: 7px">
+                    <a target="_blank" href="https://drmypet.co.kr/product/detail.html?product_no=163&cate_no=62&display_group=1">
+                        <img src="https://drmypet.co.kr/web/product/small/202011/9ac7d900b897a4a2ede80c05b9510d14.jpg" alt="수제간식 오리목뼈 100g" width="800" height="600">
+                    </a>
+                    <div class="desc">유기농야채 간식 짜르 닭가슴살 50g</div>
+                </div>
+
+                <p align="center">
+                    페이지
+                    <a href="layout.html"><</a> <a href="layout.html">1</a> , <a href="layout.html">2</a> , <a href="layout.html">3</a> <a href="layout.html">></a>
+                </p>
+                <p align="right">
+                    그림출처 : <a href="https://drmypet.co.kr/" style="color: #0b5ed7">mypetDoctor</a><br>
+                    링크연결 : <a href="https://drmypet.co.kr/" style="color: #0b5ed7">mypetDoctor</a>
+                </p>
+                <hr>
+                <br>
+            </article>
+
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0" style="font-size: 10pt">
+                        서울 양천구에서 시작한 쿠키의 간식!<br>
+                        내 강아지가 먹는다는 마음으로 만듭니다.<br>
+
+                    </p>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="fst-italic">side menu</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="layout.html">food menu</a></li>
+                        <li><a href="boardList.html">board list</a></li>
+                        <li><a href="register.html">register</a></li>
+                        <li><a href="read.html">read board</a></li>
+                        <li><a href="#">testModal</a></li>
+                        <br>
+                        <li><a href="#">Back to top</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="blog-footer">
+    <p>(주)쿠키의간식 <a href="https://www.instagram.com/joungwooooo">kukie's food</a> by <a href="https://github.com/ljw8124">@source</a>.</p>
+    <p> 대표 번호 : 010-0000-0000</p>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+
+</body>
+</html>

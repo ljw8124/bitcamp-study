@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Blog Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      table {
+        font-family: "맑은 고딕";
+        border-collapse: collapse;
+        width: 100%;
+        caption-side: top;
+      }
+      td, th {
+        border: 1px solid;
+        text-align: left;
+        padding: 8px;
+        font-size: 12pt;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+  </head>
+  <body>
+    
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="#">Subscribe</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href=layout.html>kukie's food</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="layout.html">전체 메뉴</a>
+      <a class="p-2 link-secondary" href="boardList.html">게시판 목록/읽기</a>
+      <a class="p-2 link-secondary" href="register.html">게시물 작성</a>
+      <a class="p-2 link-secondary" href="#">testModal(미구현)</a>
+    </nav>
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">for my puppy</h1>
+      <p class="lead my-3">강아지의, 강아지에 의한, 강아지를 위한</p>
+    </div>
+  </div>
+<!-- 메인 화면 -->
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Best Item</strong>
+          <h3 class="mb-0">Organic, Fresh, Delicious</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">아이들이 정말 좋아하는 오리 목뼈를 말린 간식입니다.</p>
+          <a href="#" class="stretched-link">더보기</a> <!-- 아직구현못함 -->
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img width="200" height="250" src="img/bestseller.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Best Review</strong>
+          <h3 class="mb-0">저희 아이가 정말 좋아해요!</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">저희집 강아지가 항상 이것만 가지고 놀아요 너무 좋습니다 :)</p>
+          <a href="#" class="stretched-link">더보기</a> <!-- 아직구현못함 -->
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img width="200" height="250" src="img/kukiephoto.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 여기까지 공통 레이아웃 -->
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        From kukie's store
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title" >[1] 바나나껌&오리(sample food)</h2>
+
+        <form>
+        <p style="font-size: 18pt" align="center">
+        <img src="img/kukiesfood.png" alt="kukiesfood" align="center"><br>
+          건강하고 영양가 있는 천연 식재료로 만든 <strong>수제간식!</strong><br>
+          맛과 영양을 함께 고민하는 간식입니다.<br>
+        </p>
+          <p>
+          <br>
+          <h2><b>&nbsp;&nbsp;&nbsp;&nbsp;우리만의 약속!</b></h2>
+          <ul>
+            <li>색소,착향료,방부제를 전혀사용하지 않습니다.</li>
+            <li>100% 국내제조 수제간식입니다.</li>
+            <li>콜라겐이 듬뿍 들어 피부건강과 관절에 좋습니다.</li>
+            <li>오래 씹을 수 있어서 치석제거에 좋습니다.</li>
+            <li>불포화 지방산이 풍부하여 혈액 순환에 좋습니다.</li>
+          </ul>
+          <p>
+          <br>
+            <br>
+          <p>
+          <table>
+          <h2><b>&nbsp;&nbsp;&nbsp;&nbsp;영양성분</b></h2>
+            <tr>
+              <th>조단백질</th>
+              <th>조지방</th>
+              <th>조회분</th>
+              <th>수분</th>
+            </tr>
+            <tr>
+              <td>77.3% 이상</td>
+              <td>4.5% 이하</td>
+              <td>2.8% 이하</td>
+              <td>8.2% 이하</td>
+            </tr>
+          </table>
+          </p>
+          <br>
+          <br>
+          <p align="center">
+          <img src="img/feedRation.png">
+          </p>
+          <br>
+          <br>
+          <p>
+          <h2><b>&nbsp;&nbsp;&nbsp;&nbsp;보관방법</b></h2>
+          <ul>
+            <li>개봉 전 직사광선을 피하고 습기가 없는 서늘한 곳에 보관하세요</li>
+            <li>
+              개봉 후 반드시 냉장,보관하시고 개봉일로부터 냉장시 1주,<br>
+              냉동시 1개월 이내에 급여하세요.
+            </li>
+            <li>화학첨가물이 가미되지 않은 무방부제 제품이므로 실온에서 보관하실 경우<br>
+              변질의 우려가 있으니 절대 실온보관은 하지 말아주세요.</li>
+          </ul>
+          </p>
+          <br>
+          <br>
+          <p>
+          <h2><b>&nbsp;&nbsp;&nbsp;&nbsp;주의사항</b></h2>
+          <ul>
+            <li>생후 3개우러 미만의 반려견에게는 급여하지 마세요.</li>
+            <li>냉장,냉동 보관 후 차가운 상태로 급여시 구토나 설사를 할 수 있으므로 상온상태에서 급여하세요.</li>
+            <li>제품 내에 들어있는 탈산소제는 급여하지 마세요.</li>
+            <li>어린이의 손에 닿지 않게 보관하세요.</li>
+            <li>본 제품은 동물용이므로 사람이 먹을 수 없어요.</li>
+            <li>씹지 않고 한 번에 삼킬 경워 목에 걸릴 수 있으니 주의하세요.</li>
+            <li>반려견의 치아상태에 따라 치아손상이 있을 수 있으니 주의하세요.</li>
+          </ul>
+          </p>
+          <br>
+          <br>
+          <p align="center">
+          <img src="img/caution.png">
+          </p>
+          <br>
+        <p class="blog-post-meta" align="right">
+          작성자 : 이정우<br>
+          작성일 : 2021.07.27<br>
+          조회수 : 3565<br>
+          그림출처 : <a href="https://drmypet.co.kr/" style="color: #0b5ed7">mypetDoctor</a><br>
+          링크연결 : <a href="https://drmypet.co.kr/" style="color: #0b5ed7">mypetDoctor</a>
+        </p>
+        <hr>
+        </form>
+      </article>
+
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0" style="font-size: 10pt">
+            서울 양천구에서 시작한 쿠키의 간식!<br>
+            내 강아지가 먹는다는 마음으로 만듭니다.<br>
+
+          </p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">side menu</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="layout.html">food menu</a></li>
+            <li><a href="boardList.html">board list</a></li>
+            <li><a href="register.html">register</a></li>
+            <li><a href="read.html">read board</a></li>
+            <li><a href="#">testModal</a></li>
+            <br>
+            <li><a href="#">Back to top</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="blog-footer">
+  <p>(주)쿠키의간식 <a href="https://www.instagram.com/joungwooooo">kukie's food</a> by <a href="https://github.com/ljw8124">@source</a>.</p>
+  <p> 대표 번호 : 010-0000-0000</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+
+  </body>
+</html>
